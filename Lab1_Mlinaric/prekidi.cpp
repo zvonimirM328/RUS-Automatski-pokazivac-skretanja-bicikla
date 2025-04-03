@@ -1,184 +1,219 @@
-// Pin definitions for buttons and LEDs
-#define BUTTON0 2  // INT0 - Button connected to pin 2 (interrupt 0)
-#define BUTTON1 3  // INT1 - Button connected to pin 3 (interrupt 1)
-#define BUTTON2 21 // INT2 - Button connected to pin 21 (interrupt 2)
+/**
+ * @file main.cpp
+ * @brief Program za upravljanje LED-ovima, tipkama i ultrazvučnim senzorom
+ *
+ * Ovaj program koristi prekide za detekciju pritiska tipki, timer za redovite intervale
+ * i ultrazvučni senzor za mjerenje distance. Također uključuje LED-ove koji trepću
+ * na temelju različitih događaja.
+ */
 
-#define LED_INT0 8    // LED for Button 0 (interrupt)
-#define LED_INT1 9    // LED for Button 1 (interrupt)
-#define LED_INT2 10   // LED for Button 2 (interrupt)
-#define LED_TIMER 11  // LED for Timer interrupt
-#define LED_SENSOR 12 // LED for Sensor trigger
-#define TRIG_PIN 6    // Trigger pin for ultrasonic sensor
-#define ECHO_PIN 7    // Echo pin for ultrasonic sensor
+#define BUTTON0 2  /**< Pin za prvu tipku koja koristi prekid INT0. */
+#define BUTTON1 3  /**< Pin za drugu tipku koja koristi prekid INT1. */
+#define BUTTON2 21 /**< Pin za treću tipku koja koristi prekid INT2. */
 
-// Flags to handle different interrupts
-volatile bool timerInterruptFlag = false;
-volatile bool button0InterruptFlag = false;
-volatile bool button1InterruptFlag = false;
-volatile bool button2InterruptFlag = false;
-volatile bool sensorInterruptFlag = false;
+#define LED_INT0 8    /**< Pin za LED povezanu s prekidom INT0. */
+#define LED_INT1 9    /**< Pin za LED povezanu s prekidom INT1. */
+#define LED_INT2 10   /**< Pin za LED povezanu s prekidom INT2. */
+#define LED_TIMER 11  /**< Pin za LED povezanu s timera. */
+#define LED_SENSOR 12 /**< Pin za LED povezanu s ultrazvučnim senzorom. */
+#define TRIG_PIN 6    /**< Pin za trig funkciju ultrazvučnog senzora. */
+#define ECHO_PIN 7    /**< Pin za echo funkciju ultrazvučnog senzora. */
 
-// Variables for LED timing and blinking
-unsigned long previousMillisLED0 = 0;
-unsigned long previousMillisLED1 = 0;
-unsigned long previousMillisLED2 = 0;
-unsigned long previousMillisTimer = 0;
-unsigned long previousMillisSensor = 0;
+volatile bool timerInterruptFlag = false;         /**< Signalizira da je timer interrupt aktiviran. */
+volatile bool button0InterruptFlag = false;      /**< Signalizira da je Button0 interrupt aktiviran. */
+volatile bool button1InterruptFlag = false;      /**< Signalizira da je Button1 interrupt aktiviran. */
+volatile bool button2InterruptFlag = false;      /**< Signalizira da je Button2 interrupt aktiviran. */
+volatile bool sensorInterruptFlag = false;       /**< Signalizira da je senzor interrupt aktiviran. */
 
-// Blink interval (in milliseconds) and debounce delay (in milliseconds)
-const unsigned long blinkInterval = 100;
-const unsigned long debounceDelay = 200;
+unsigned long previousMillisLED0 = 0;            /**< Vrijeme proteklo od posljednjeg LED blinkanja za LED_INT0. */
+unsigned long previousMillisLED1 = 0;            /**< Vrijeme proteklo od posljednjeg LED blinkanja za LED_INT1. */
+unsigned long previousMillisLED2 = 0;            /**< Vrijeme proteklo od posljednjeg LED blinkanja za LED_INT2. */
+unsigned long previousMillisTimer = 0;           /**< Vrijeme proteklo od posljednjeg timer interrupta. */
+unsigned long previousMillisSensor = 0;          /**< Vrijeme proteklo od posljednjeg senzor interrupta. */
+const unsigned long blinkInterval = 100;         /**< Interval za blinksanje LED-a u milisekundama. */
+const unsigned long debounceDelay = 200;         /**< Debounce interval za tipke u milisekundama. */
+int led0State = 0, led1State = 0, led2State = 0, sensorLedState = 0; /**< Trenutna stanja LED-ova. */
+int blinkCount0 = 0, blinkCount1 = 0, blinkCount2 = 0, sensorBlinkCount = 0; /**< Broj treptanja LED-ova. */
 
-// Variables for LED states and blink counts
-int led0State = 0, led1State = 0, led2State = 0, sensorLedState = 0;
-int blinkCount0 = 0, blinkCount1 = 0, blinkCount2 = 0, sensorBlinkCount = 0;
+unsigned long lastInterruptTime0 = 0;            /**< Vrijeme posljednjeg interrupta za Button0, za debouncing. */
+unsigned long lastInterruptTime1 = 0;            /**< Vrijeme posljednjeg interrupta za Button1, za debouncing. */
+unsigned long lastInterruptTime2 = 0;            /**< Vrijeme posljednjeg interrupta za Button2, za debouncing. */
 
-// Variables for managing interrupt timing and debouncing
-unsigned long lastInterruptTime0 = 0;
-unsigned long lastInterruptTime1 = 0;
-unsigned long lastInterruptTime2 = 0;
-
+/**
+ * @brief Inicijalizira pinove, prekide i timer.
+ *
+ * Postavlja pinMode za tipke, LED-ove i senzor, te povezuje prekide za tipke.
+ */
 void setup() {
-    // Initialize button pins with pull-up resistors
-    pinMode(BUTTON0, INPUT_PULLUP);
-    pinMode(BUTTON1, INPUT_PULLUP);
-    pinMode(BUTTON2, INPUT_PULLUP);
+    pinMode(BUTTON0, INPUT_PULLUP); /**< Postavljanje BUTTON0 kao ulaz s pull-up otpornikom. */
+    pinMode(BUTTON1, INPUT_PULLUP); /**< Postavljanje BUTTON1 kao ulaz s pull-up otpornikom. */
+    pinMode(BUTTON2, INPUT_PULLUP); /**< Postavljanje BUTTON2 kao ulaz s pull-up otpornikom. */
     
-    // Initialize LED pins as output
-    pinMode(LED_INT0, OUTPUT);
-    pinMode(LED_INT1, OUTPUT);
-    pinMode(LED_INT2, OUTPUT);
-    pinMode(LED_TIMER, OUTPUT);
-    pinMode(LED_SENSOR, OUTPUT);
+    pinMode(LED_INT0, OUTPUT);     /**< Postavljanje LED_INT0 kao izlaz. */
+    pinMode(LED_INT1, OUTPUT);     /**< Postavljanje LED_INT1 kao izlaz. */
+    pinMode(LED_INT2, OUTPUT);     /**< Postavljanje LED_INT2 kao izlaz. */
+    pinMode(LED_TIMER, OUTPUT);    /**< Postavljanje LED_TIMER kao izlaz. */
+    pinMode(LED_SENSOR, OUTPUT);   /**< Postavljanje LED_SENSOR kao izlaz. */
     
-    // Initialize ultrasonic sensor pins
-    pinMode(TRIG_PIN, OUTPUT);
-    pinMode(ECHO_PIN, INPUT);
+    pinMode(TRIG_PIN, OUTPUT);    /**< Postavljanje TRIG_PIN kao izlaz. */
+    pinMode(ECHO_PIN, INPUT);     /**< Postavljanje ECHO_PIN kao ulaz. */
     
-    // Attach interrupts to buttons for falling edge detection
-    attachInterrupt(digitalPinToInterrupt(BUTTON0), handleButton0, FALLING);
-    attachInterrupt(digitalPinToInterrupt(BUTTON1), handleButton1, FALLING);
-    attachInterrupt(digitalPinToInterrupt(BUTTON2), handleButton2, FALLING);
+    attachInterrupt(digitalPinToInterrupt(BUTTON0), handleButton0, FALLING); /**< Postavljanje prekida za BUTTON0. */
+    attachInterrupt(digitalPinToInterrupt(BUTTON1), handleButton1, FALLING); /**< Postavljanje prekida za BUTTON1. */
+    attachInterrupt(digitalPinToInterrupt(BUTTON2), handleButton2, FALLING); /**< Postavljanje prekida za BUTTON2. */
     
-    // Set up Timer1 to trigger an interrupt every 1 second
-    setupTimer1();
+    setupTimer1(); /**< Postavljanje Timer1 za generiranje prekida svakih 1 sekundu. */
 }
 
+/**
+ * @brief Postavlja Timer1 za generiranje prekida svakih 1 sekundu.
+ *
+ * Timer1 je postavljen u CTC mod i koristi prescaler od 1024.
+ */
 void setupTimer1() {
-    noInterrupts();           // Disable interrupts temporarily
-    TCCR1A = 0;               // Clear Timer/Counter Control Register A
-    TCCR1B = 0;               // Clear Timer/Counter Control Register B
-    TCNT1 = 0;                // Reset Timer1 counter
-    OCR1A = 15624;            // Set compare value for 1 second interrupt
-    TCCR1B |= (1 << WGM12);   // Set Timer mode to CTC (Clear Timer on Compare Match)
-    TCCR1B |= (1 << CS12) | (1 << CS10); // Set prescaler to 1024
-    TIMSK1 |= (1 << OCIE1A);  // Enable interrupt on compare match
-    interrupts();             // Re-enable interrupts
+    noInterrupts();                /**< Onemogućavanje svih prekida. */
+    TCCR1A = 0;                     /**< Postavljanje registra TCCR1A na 0. */
+    TCCR1B = 0;                     /**< Postavljanje registra TCCR1B na 0. */
+    TCNT1 = 0;                      /**< Postavljanje brojača na 0. */
+    OCR1A = 15624;                  /**< Postavljanje usporedne vrijednosti za 1 Hz (1 sekunda). */
+    TCCR1B |= (1 << WGM12);         /**< Postavljanje CTC moda za Timer1. */
+    TCCR1B |= (1 << CS12) | (1 << CS10); /**< Postavljanje prescalera na 1024. */
+    TIMSK1 |= (1 << OCIE1A);        /**< Omogućavanje prekida za usporedbu Timer1. */
+    interrupts();                   /**< Omogućavanje prekida. */
 }
 
-// Timer1 compare match interrupt service routine (ISR)
+/**
+ * @brief ISR za Timer1 koji se aktivira na svako odbrojavanje Timer1.
+ * 
+ * Ovdje se postavlja signal da je timer interrupt aktiviran.
+ */
 ISR(TIMER1_COMPA_vect) {
-    timerInterruptFlag = true;  // Set flag when Timer1 interrupt occurs
+    timerInterruptFlag = true; /**< Signalizira da je timer interrupt aktiviran. */
 }
 
+/**
+ * @brief Funkcija koja obrađuje pritisak tipke 0.
+ *
+ * Ovdje se debounca interrupt i postavlja flag za Button0.
+ */
 void handleButton0() {
     unsigned long interruptTime = millis();
-    if (interruptTime - lastInterruptTime0 > debounceDelay) { // Debounce button press
-        button0InterruptFlag = true;  // Set flag when Button0 is pressed
+    if (interruptTime - lastInterruptTime0 > debounceDelay) {
+        button0InterruptFlag = true; /**< Postavljanje flag-a za Button0 interrupt. */
     }
-    lastInterruptTime0 = interruptTime; // Update last interrupt time
+    lastInterruptTime0 = interruptTime; /**< Ažuriranje vremena posljednjeg interrupta za Button0. */
 }
 
+/**
+ * @brief Funkcija koja obrađuje pritisak tipke 1.
+ *
+ * Ovdje se debounca interrupt i postavlja flag za Button1.
+ */
 void handleButton1() {
     unsigned long interruptTime = millis();
-    if (interruptTime - lastInterruptTime1 > debounceDelay) { // Debounce button press
-        button1InterruptFlag = true;  // Set flag when Button1 is pressed
+    if (interruptTime - lastInterruptTime1 > debounceDelay) {
+        button1InterruptFlag = true; /**< Postavljanje flag-a za Button1 interrupt. */
     }
-    lastInterruptTime1 = interruptTime; // Update last interrupt time
+    lastInterruptTime1 = interruptTime; /**< Ažuriranje vremena posljednjeg interrupta za Button1. */
 }
 
+/**
+ * @brief Funkcija koja obrađuje pritisak tipke 2.
+ *
+ * Ovdje se debounca interrupt i postavlja flag za Button2.
+ */
 void handleButton2() {
     unsigned long interruptTime = millis();
-    if (interruptTime - lastInterruptTime2 > debounceDelay) { // Debounce button press
-        button2InterruptFlag = true;  // Set flag when Button2 is pressed
+    if (interruptTime - lastInterruptTime2 > debounceDelay) {
+        button2InterruptFlag = true; /**< Postavljanje flag-a za Button2 interrupt. */
     }
-    lastInterruptTime2 = interruptTime; // Update last interrupt time
+    lastInterruptTime2 = interruptTime; /**< Ažuriranje vremena posljednjeg interrupta za Button2. */
 }
 
+/**
+ * @brief Glavna petlja programa.
+ *
+ * Ovdje se provode sve funkcionalnosti: obrađuju se interrupti, provodi se mjerenje distance i treptanje LED-a.
+ */
 void loop() {
-    unsigned long currentMillis = millis(); // Get current time in milliseconds
+    unsigned long currentMillis = millis(); /**< Pohranjivanje trenutnog vremena. */
 
-    // Handle Timer interrupt: Blink the timer LED and trigger the sensor
     if (timerInterruptFlag) {
         timerInterruptFlag = false;
         previousMillisTimer = currentMillis;
-        digitalWrite(LED_TIMER, HIGH);  // Turn on timer LED
-        checkDistance();  // Check distance using ultrasonic sensor
+        digitalWrite(LED_TIMER, HIGH); /**< Uključivanje LED_TIMER. */
+        checkDistance(); /**< Provjera distance pomoću ultrazvučnog senzora. */
     }
     if (currentMillis - previousMillisTimer >= blinkInterval) {
-        digitalWrite(LED_TIMER, LOW);  // Turn off timer LED after blink interval
+        digitalWrite(LED_TIMER, LOW); /**< Isključivanje LED_TIMER. */
     }
 
-    // Handle Button 0 press: Blink the LED connected to Button 0
     if (button0InterruptFlag) {
         button0InterruptFlag = false;
-        blinkCount0 = 5;  // Set blink count for LED0
+        blinkCount0 = 5; /**< Pokretanje treptanja LED_INT0. */
     }
-    blinkLED(LED_INT0, previousMillisLED0, led0State, blinkCount0); // Call blink function
+    blinkLED(LED_INT0, previousMillisLED0, led0State, blinkCount0);
 
-    // Handle Button 1 press: Blink the LED connected to Button 1
     if (button1InterruptFlag) {
         button1InterruptFlag = false;
-        blinkCount1 = 5;  // Set blink count for LED1
+        blinkCount1 = 5; /**< Pokretanje treptanja LED_INT1. */
     }
-    blinkLED(LED_INT1, previousMillisLED1, led1State, blinkCount1); // Call blink function
+    blinkLED(LED_INT1, previousMillisLED1, led1State, blinkCount1);
 
-    // Handle Button 2 press: Blink the LED connected to Button 2
     if (button2InterruptFlag) {
         button2InterruptFlag = false;
-        blinkCount2 = 5;  // Set blink count for LED2
+        blinkCount2 = 5; /**< Pokretanje treptanja LED_INT2. */
     }
-    blinkLED(LED_INT2, previousMillisLED2, led2State, blinkCount2); // Call blink function
+    blinkLED(LED_INT2, previousMillisLED2, led2State, blinkCount2);
 
-    // Handle Sensor interrupt: Blink the sensor LED
     if (sensorInterruptFlag) {
         sensorInterruptFlag = false;
-        sensorBlinkCount = 5;  // Set blink count for sensor LED
+        sensorBlinkCount = 5; /**< Pokretanje treptanja LED_SENSOR. */
     }
-    blinkLED(LED_SENSOR, previousMillisSensor, sensorLedState, sensorBlinkCount); // Call blink function
+    blinkLED(LED_SENSOR, previousMillisSensor, sensorLedState, sensorBlinkCount);
 }
 
+/**
+ * @brief Funkcija za treptanje LED-a.
+ *
+ * Ova funkcija upravlja LED pinom na temelju vremena proteklog od posljednjeg treptanja.
+ *
+ * @param ledPin Pin LED-a koji treba treptati.
+ * @param previousMillis Pohranjuje posljednje vrijeme kada je LED trepnuo.
+ * @param ledState Trenutno stanje LED-a (uključeno/isključeno).
+ * @param blinkCount Broj preostalih treptanja LED-a.
+ */
 void blinkLED(int ledPin, unsigned long &previousMillis, int &ledState, int &blinkCount) {
     if (blinkCount > 0) {
-        unsigned long currentMillis = millis(); // Get current time in milliseconds
-        if (currentMillis - previousMillis >= blinkInterval) {  // Check if it's time to blink
+        unsigned long currentMillis = millis();
+        if (currentMillis - previousMillis >= blinkInterval) {
             previousMillis = currentMillis;
-            ledState = !ledState;  // Toggle LED state
-            digitalWrite(ledPin, ledState);  // Update LED pin
+            ledState = !ledState;
+            digitalWrite(ledPin, ledState);
             if (ledState == LOW) {
-                blinkCount--;  // Decrement blink count when LED turns off
+                blinkCount--; /**< Smanjenje broja preostalih treptanja. */
             }
         }
     }
 }
 
-// Function to check the distance using an ultrasonic sensor
+/**
+ * @brief Funkcija za mjerenje distance pomoću ultrazvučnog senzora.
+ *
+ * Aktivira trig pin, mjeri trajanje echo signala i izračunava udaljenost.
+ * Ako je udaljenost manja od 100 cm, postavlja sensor interrupt flag.
+ */
 void checkDistance() {
-    digitalWrite(TRIG_PIN, LOW);     // Make sure the trigger pin is low
-    delayMicroseconds(2);            // Wait for a short time
-    digitalWrite(TRIG_PIN, HIGH);    // Send a pulse to trigger the ultrasonic sensor
-    delayMicroseconds(10);           // Wait for 10 microseconds
-    digitalWrite(TRIG_PIN, LOW);     // Stop sending the pulse
+    digitalWrite(TRIG_PIN, LOW);
+    delayMicroseconds(2);
+    digitalWrite(TRIG_PIN, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(TRIG_PIN, LOW);
     
-    // Measure the pulse width of the echo signal
-    long duration = pulseIn(ECHO_PIN, HIGH, 20000);  // Measure echo duration (max 20ms timeout)
-    if (duration == 0) {
-        duration = 20000;  // Assume max distance if no echo is received
-    }
-    
-    // Calculate the distance in centimeters (speed of sound = 0.0343 cm/µs)
-    float distance = duration * 0.0343 / 2;
-    if (distance < 100) {  // If the distance is less than 100 cm, trigger the sensor LED
-        sensorInterruptFlag = true;
+    long duration = pulseIn(ECHO_PIN, HIGH);
+    long distance = duration * 0.0344 / 2;
+
+    if (distance < 100) {
+        sensorInterruptFlag = true; /**< Ako je udaljenost manja od 100 cm, postavlja sensor interrupt flag. */
     }
 }
