@@ -52,7 +52,7 @@ Timer aktivira LED diodu (LED_TIMER) i poziva funkciju za provjeru udaljenosti s
 
 Timer prekid aktivira mjerenje udaljenosti pomoću HC-SR04 senzora.
 
-Ako je objekt bliže od 100 cm, aktivira se prekid senzora i narančasta LED dioda trepeće dok se ne udalji objekt.
+Ako je objekt bliže od 100 cm, aktivira se prekid senzora i narančasta LED dioda trepće dok se ne udalji objekt.
 
 <h2>5. Zaključak</h2>
 
