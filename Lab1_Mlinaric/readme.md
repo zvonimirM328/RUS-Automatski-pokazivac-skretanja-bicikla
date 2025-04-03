@@ -1,4 +1,6 @@
-#📖 Lab1: Prekidi u Ugradbenim Sustavima
+<h1>📖 Lab1: Prekidi u Ugradbenim Sustavima</h1>
+
+Poveznica za projekt: https://wokwi.com/projects/427246398407736321
 
 <h2>1. Opis zadatka</h2>
 
@@ -12,7 +14,7 @@ Korištene funkcionalnosti:
 
 ✅ Prekid putem ultrazvučnog senzora (HC-SR04) ako je objekt bliži od 100 cm
 
-## 2. Hardverske komponente
+<h2>2. Hardverske komponente</h2>
 
 Za realizaciju sustava korišteni su sljedeći dijelovi:
 
@@ -28,7 +30,7 @@ Za realizaciju sustava korišteni su sljedeći dijelovi:
 
 Sljedeća slika prikazuje način povezivanja komponenti:
 
-📷 Slika spojeva (Shema spojene elektronike)
+![schema](https://github.com/user-attachments/assets/30ef2200-4a63-4290-aa3f-af72a8bc4b27)
 
 <h2>4. Opis rješenja</h2>
 
