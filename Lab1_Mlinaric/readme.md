@@ -17,12 +17,15 @@ Korištene funkcionalnosti:
 Za realizaciju sustava korišteni su sljedeći dijelovi:
 
 | Komponenta  | Model | Uloga |
+
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
+
+| Mikrokontroler  | Arduino Mega 2560  | Glavni upravljački sklop |
+
 | Content Cell  | Content Cell  |
 
 		
-Mikrokontroler	Arduino Mega 2560	Glavni upravljački sklop
+		
 LED diode	5x (različite boje)	Signalizacija prekida
 Tipke (Buttons)	3x Tactile Switch	Aktivacija prekida
 Ultrazvučni senzor	HC-SR04	Mjerenje udaljenosti
