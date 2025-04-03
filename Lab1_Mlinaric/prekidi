@@ -26,6 +26,10 @@ const unsigned long debounceDelay = 200;
 int led0State = 0, led1State = 0, led2State = 0, sensorLedState = 0;
 int blinkCount0 = 0, blinkCount1 = 0, blinkCount2 = 0, sensorBlinkCount = 0;
 
+unsigned long lastInterruptTime0 = 0;
+unsigned long lastInterruptTime1 = 0;
+unsigned long lastInterruptTime2 = 0;
+
 void setup() {
     pinMode(BUTTON0, INPUT_PULLUP);
     pinMode(BUTTON1, INPUT_PULLUP);
@@ -63,9 +67,29 @@ ISR(TIMER1_COMPA_vect) {
     timerInterruptFlag = true;
 }
 
-void handleButton0() { button0InterruptFlag = true; }
-void handleButton1() { button1InterruptFlag = true; }
-void handleButton2() { button2InterruptFlag = true; }
+void handleButton0() {
+    unsigned long interruptTime = millis();
+    if (interruptTime - lastInterruptTime0 > debounceDelay) {
+        button0InterruptFlag = true;
+    }
+    lastInterruptTime0 = interruptTime;
+}
+
+void handleButton1() {
+    unsigned long interruptTime = millis();
+    if (interruptTime - lastInterruptTime1 > debounceDelay) {
+        button1InterruptFlag = true;
+    }
+    lastInterruptTime1 = interruptTime;
+}
+
+void handleButton2() {
+    unsigned long interruptTime = millis();
+    if (interruptTime - lastInterruptTime2 > debounceDelay) {
+        button2InterruptFlag = true;
+    }
+    lastInterruptTime2 = interruptTime;
+}
 
 void loop() {
     unsigned long currentMillis = millis();
@@ -127,7 +151,9 @@ void checkDistance() {
     digitalWrite(TRIG_PIN, LOW);
     
     long duration = pulseIn(ECHO_PIN, HIGH, 20000);
-    if (duration == 0) return;
+    if (duration == 0) {
+        duration = 20000; // Assume max distance if no echo received
+    }
     
     float distance = duration * 0.0343 / 2;
     if (distance < 100) {
