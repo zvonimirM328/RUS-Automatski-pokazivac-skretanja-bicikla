@@ -26,16 +26,13 @@ Sljedeća slika prikazuje način povezivanja komponenti:
 Kod implementira prekide za tipke, tajmer i senzor koristeći Arduino C++.
 
 📌 Vanjski prekidi (tipke)
-Svaka tipka je povezana na prekidni ulaz (INT0, INT1, INT2).
-
-Kada se tipka pritisne, LED dioda trepće 10 puta.
-
-Implementiran je debounce kako bi se izbjegle neželjene višestruke aktivacije.
+    Svaka tipka je povezana na prekidni ulaz (INT0, INT1, INT2).
+    Kada se tipka pritisne, LED dioda trepće 10 puta.
+    Implementiran je debounce kako bi se izbjegle neželjene višestruke aktivacije.
 
 📌 Tajmerski prekid
-Timer1 se koristi za generiranje prekida svakih 1 sekundu.
-
-Timer aktivira LED diodu (LED_TIMER) i poziva funkciju za provjeru udaljenosti senzora.
+    Timer1 se koristi za generiranje prekida svakih 1 sekundu.
+    Timer aktivira LED diodu (LED_TIMER) i poziva funkciju za provjeru udaljenosti senzora.
 
 📌 Ultrazvučni senzor (HC-SR04)
 Timer prekid aktivira mjerenje udaljenosti pomoću HC-SR04 senzora.
