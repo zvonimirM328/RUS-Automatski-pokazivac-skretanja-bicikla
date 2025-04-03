@@ -1,15 +1,20 @@
 <h1>Lab1: Prekidi u Ugradbenim Sustavima</h1>
 📖 Prekidi u Ugradbenim Sustavima
+
 1. Opis zadatka
 
 Cilj ovog laboratorijskog rada je implementacija prekida (interrupts) na Arduino Mega 2560 pomoću tipki, tajmera i ultrazvučnog senzora. Svaki prekid aktivira određenu LED diodu kako bi se vizualizirala aktivnost.
 
 Korištene funkcionalnosti:
+
 ✅ Prekidi pomoću vanjskih tipki (INT0, INT1, INT2)
+
 ✅ Prekid tajmera Timer1 za periodične radnje
+
 ✅ Prekid putem ultrazvučnog senzora (HC-SR04) ako je objekt bliži od 100 cm
 
 2. Hardverske komponente
+
 Za realizaciju sustava korišteni su sljedeći dijelovi:
 
 Komponenta	Model	Uloga
