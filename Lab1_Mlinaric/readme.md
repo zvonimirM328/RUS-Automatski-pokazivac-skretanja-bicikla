@@ -1,4 +1,4 @@
-<h1>📖 Lab1: Prekidi u Ugradbenim Sustavima</h1>
+#📖 Lab1: Prekidi u Ugradbenim Sustavima
 
 <h2>1. Opis zadatka</h2>
 
