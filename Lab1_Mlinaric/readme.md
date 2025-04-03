@@ -24,12 +24,13 @@ Za realizaciju sustava korišteni su sljedeći dijelovi:
 | **Ultrazvučni senzor**| HC-SR04             | Mjerenje udaljenosti          |
 | **Logički analizator**| WOKWI LOGIC         | Analiza signala (simulacija)  |
 
-3. Slika spojeva
+<h2>3. Slika spojeva</h2>
+
 Sljedeća slika prikazuje način povezivanja komponenti:
 
 📷 Slika spojeva (Shema spojene elektronike)
 
-4. Opis rješenja
+<h2>4. Opis rješenja</h2>
 Kod implementira prekide za tipke, tajmer i senzor koristeći Arduino C++.
 
 📌 Vanjski prekidi (tipke)
@@ -49,7 +50,7 @@ Timer prekid aktivira mjerenje udaljenosti pomoću HC-SR04 senzora.
 
 Ako je objekt bliže od 100 cm, aktivira se prekid senzora i narančasta LED dioda trepeće dok se ne udalji objekt.
 
-5. Zaključak
+<h2>5. Zaključak</h2>
 Ovaj laboratorijski zadatak uspješno demonstrira korištenje prekida na Arduino Mega 2560.
 
 🔹 Prekidi omogućuju brzu i efikasnu reakciju sustava na događaje.
