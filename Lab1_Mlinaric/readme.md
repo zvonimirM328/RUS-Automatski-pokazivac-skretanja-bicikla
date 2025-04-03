@@ -12,24 +12,18 @@ Korištene funkcionalnosti:
 
 ✅ Prekid putem ultrazvučnog senzora (HC-SR04) ako je objekt bliži od 100 cm
 
-2. Hardverske komponente
+## 2. Hardverske komponente
 
 Za realizaciju sustava korišteni su sljedeći dijelovi:
 
-| Komponenta  | Model | Uloga |
+| **Komponenta**        | **Model**            | **Uloga**                     |
+|-----------------------|---------------------|-------------------------------|
+| **Mikrokontroler**    | Arduino Mega 2560   | Glavni upravljački sklop      |
+| **LED diode**         | 5x (različite boje) | Signalizacija prekida         |
+| **Tipke (Buttons)**   | 3x Tactile Switch   | Aktivacija prekida            |
+| **Ultrazvučni senzor**| HC-SR04             | Mjerenje udaljenosti          |
+| **Logički analizator**| WOKWI LOGIC         | Analiza signala (simulacija)  |
 
-| ------------- | ------------- |
-
-| Mikrokontroler  | Arduino Mega 2560  | Glavni upravljački sklop |
-
-| Content Cell  | Content Cell  |
-
-		
-		
-LED diode	5x (različite boje)	Signalizacija prekida
-Tipke (Buttons)	3x Tactile Switch	Aktivacija prekida
-Ultrazvučni senzor	HC-SR04	Mjerenje udaljenosti
-Logički analizator	WOKWI LOGIC	Analiza signala (simulacija)
 3. Slika spojeva
 Sljedeća slika prikazuje način povezivanja komponenti:
 
