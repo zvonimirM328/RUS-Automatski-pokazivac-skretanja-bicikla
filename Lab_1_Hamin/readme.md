@@ -42,7 +42,7 @@ Sljedeća slika prikazuje način povezivanja komponenti u Wokwi simulatoru:
 <H2> 4. Opis rješenja </H2>
 Kod implementira prekide za tipke, tajmer i senzor koristeći Arduino C++.
 
-📌 Vanjski prekidi (tipke)
+<H3>📌 Vanjski prekidi (tipke)</H3>
 
 Svaka tipka povezana je na digitalni ulaz:
 <OL>
