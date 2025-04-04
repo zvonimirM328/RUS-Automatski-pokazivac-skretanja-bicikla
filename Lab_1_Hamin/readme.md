@@ -15,7 +15,7 @@ Korištene funkcionalnosti:
 ✅ Aktivacija LED-a putem ultrazvučnog senzora (HC-SR04) ako je objekt bliži od 10 cm
 
 
-#H2 2. Hardverske komponente
+<H2> 2. Hardverske komponente</H2>
 Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru:
 
 Komponenta	Model	Uloga
@@ -30,7 +30,7 @@ Ultrazvučni senzor	HC-SR04	Mjerenje udaljenosti
 
 Logički analizator	Wokwi Logic	Analiza signala (simulacija)
 
-#H2 3. Slika spojeva
+<H2> 3. Slika spojeva </H2>
 Sljedeća slika prikazuje način povezivanja komponenti u Wokwi simulatoru:
 
 ![Arduino Setup](slika.png)
@@ -38,7 +38,7 @@ Sljedeća slika prikazuje način povezivanja komponenti u Wokwi simulatoru:
 
 
 
-#H2 4. Opis rješenja
+<H2> 4. Opis rješenja </H2>
 Kod implementira prekide za tipke, tajmer i senzor koristeći Arduino C++.
 
 📌 Vanjski prekidi (tipke)
@@ -71,7 +71,7 @@ Ako je objekt bliže od 10 cm, plavi LED (pin 11) se pali; inače se gasi.
 Udaljenost se ispisuje u serijski monitor.
 
 
-#H2 5. Zaključak
+<H2> 5. Zaključak </H2>
 Ovaj laboratorijski zadatak uspješno demonstrira korištenje prekida na Arduino Uno mikrokontroleru.
 
 🔹 Prekidi omogućuju brzu reakciju na pritiske tipki i periodične događaje.
