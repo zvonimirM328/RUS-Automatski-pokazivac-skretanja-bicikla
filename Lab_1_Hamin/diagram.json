@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "author": "Dan Hamin",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "arduino", "top": 19.8, "left": 66.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn-high",
+      "top": -41.8,
+      "left": -124.8,
+      "attrs": { "color": "red", "label": "High Priority" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn-med",
+      "top": 54.2,
+      "left": -124.8,
+      "attrs": { "color": "yellow", "label": "Medium Priority" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn-low",
+      "top": 150.2,
+      "left": -124.8,
+      "attrs": { "color": "green", "label": "Low Priority" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led-high",
+      "top": -90,
+      "left": 282.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led-med",
+      "top": -32.4,
+      "left": 493.4,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led-low",
+      "top": -70.8,
+      "left": 397.4,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic", "top": -219.3, "left": 159.1, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led-distance",
+      "top": -109.2,
+      "left": 3.8,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -15.25,
+      "left": 316.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 42.35,
+      "left": 537.6,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 23.15,
+      "left": 412.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 253.55,
+      "left": 182.4,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "arduino:2", "btn-high:1", "green", [ "v0" ] ],
+    [ "arduino:3", "btn-med:1", "yellow", [ "v0" ] ],
+    [ "arduino:4", "btn-low:1", "blue", [ "v0" ] ],
+    [ "btn-high:2", "arduino:GND.1", "black", [ "v0" ] ],
+    [ "btn-med:2", "arduino:GND.1", "black", [ "v0" ] ],
+    [ "btn-low:2", "arduino:GND.1", "black", [ "v0" ] ],
+    [ "arduino:5", "led-high:A", "red", [ "v0" ] ],
+    [ "arduino:6", "led-med:A", "yellow", [ "v0" ] ],
+    [ "arduino:7", "led-low:A", "blue", [ "v0" ] ],
+    [ "led-high:C", "r1:1", "black", [ "v0" ] ],
+    [ "led-med:C", "r2:1", "black", [ "v0" ] ],
+    [ "led-low:C", "r3:1", "black", [ "v0" ] ],
+    [ "r1:2", "arduino:GND.2", "black", [ "v0" ] ],
+    [ "r2:2", "arduino:GND.2", "black", [ "v0" ] ],
+    [ "r3:2", "arduino:GND.2", "black", [ "v0" ] ],
+    [ "arduino:9", "ultrasonic:TRIG", "purple", [ "v0" ] ],
+    [ "arduino:10", "ultrasonic:ECHO", "orange", [ "v0" ] ],
+    [ "ultrasonic:GND", "arduino:GND.3", "black", [ "v0" ] ],
+    [ "ultrasonic:VCC", "arduino:5V", "red", [ "v0" ] ],
+    [ "arduino:11", "led-distance:A", "blue", [ "v0" ] ],
+    [ "led-distance:C", "r4:1", "black", [ "v0" ] ],
+    [ "r4:2", "arduino:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
