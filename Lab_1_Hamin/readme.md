@@ -1,5 +1,5 @@
 📖 Lab1: Prekidi u Ugradbenim Sustavima
-Poveznica za projekt: Wokwi projekt
+Poveznica za projekt: [Wokwi projekt](https://wokwi.com/projects/427284724839193601)
 
 Napomena: Zamijeni <umetni-ID-projekta> s ID-om svog projekta nakon spremanja u Wokwi-ju.
 
