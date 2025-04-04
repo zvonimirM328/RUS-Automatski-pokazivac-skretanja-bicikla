@@ -33,6 +33,7 @@ Logički analizator	Wokwi Logic	Analiza signala (simulacija)
 <H2> 3. Slika spojeva </H2>
 Sljedeća slika prikazuje način povezivanja komponenti u Wokwi simulatoru:
 
+
 ![Arduino Setup](slika.png)
 
 
@@ -44,13 +45,13 @@ Kod implementira prekide za tipke, tajmer i senzor koristeći Arduino C++.
 📌 Vanjski prekidi (tipke)
 
 Svaka tipka povezana je na digitalni ulaz:
+<OL>
+<LI>Visoki prioritet: Pin 2 (INT0)</LI>
 
-Visoki prioritet: Pin 2 (INT0)
+<LI>Srednji prioritet: Pin 3 (INT1)</LI>LI>
 
-Srednji prioritet: Pin 3 (INT1)
-
-Niski prioritet: Pin 4 (bez prekida, provjera u loop())
-
+<LI>Niski prioritet: Pin 4 (bez prekida, provjera u loop())</LI>
+</OL>
 Kada se tipka pritisne, odgovarajuća LED dioda (crvena, žuta, zelena) mijenja stanje.
 
 Debounce je implementiran softverski u loop() za niski prioritet koristeći delay(200).
