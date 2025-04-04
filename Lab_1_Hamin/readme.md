@@ -23,6 +23,9 @@ Logički analizator	Wokwi Logic	Analiza signala (simulacija)
 3. Slika spojeva
 Sljedeća slika prikazuje način povezivanja komponenti u Wokwi simulatoru:
 
+![Arduino Setup](slika.png)
+
+
 (Napomena: U Wokwi-ju možeš izvoziti dijagram kao sliku i dodati ga u repozitorij pod nazivom schema.png.)
 
 
