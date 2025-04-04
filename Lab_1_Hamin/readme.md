@@ -17,7 +17,8 @@ Korištene funkcionalnosti:
 
 <H2> 2. Hardverske komponente</H2>
 Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru:
-<br/>
+
+
 <table>
 <tbody>
 <tr>
@@ -54,6 +55,8 @@ Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru:
 </table>
 <H2> 3. Slika spojeva </H2>
 Sljedeća slika prikazuje način povezivanja komponenti u Wokwi simulatoru:
+
+
 
 
 ![Arduino Setup](slika.png)
