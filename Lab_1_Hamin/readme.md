@@ -42,7 +42,7 @@ Sljedeća slika prikazuje način povezivanja komponenti u Wokwi simulatoru:
 <H2> 4. Opis rješenja </H2>
 Kod implementira prekide za tipke, tajmer i senzor koristeći Arduino C++.
 
-<H3>📌 Vanjski prekidi (tipke)</H3>
+<H3> 📌 Vanjski prekidi (tipke)</H3>
 
 Svaka tipka povezana je na digitalni ulaz:
 <OL>
@@ -57,13 +57,13 @@ Kada se tipka pritisne, odgovarajuća LED dioda (crvena, žuta, zelena) mijenja 
 Debounce je implementiran softverski u loop() za niski prioritet koristeći delay(200).
 
 
-📌 Tajmerski prekid
+<H3> 📌 Tajmerski prekid </H3>
 
 Timer1 generira prekid svake 1 sekunde (OCR1A = 15624, prescaler 1024).
 
 Aktivira ispis poruke u serijski monitor ("Tajmer: 1 sekunda!").
 
-📌 Ultrazvučni senzor (HC-SR04)
+<H3> 📌 Ultrazvučni senzor (HC-SR04) </H3>
 
 Mjerenje udaljenosti pokreće se u loop(), ali može se povezati s tajmerom.
 
