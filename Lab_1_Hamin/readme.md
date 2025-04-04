@@ -45,13 +45,13 @@ Kod implementira prekide za tipke, tajmer i senzor koristeći Arduino C++.
 <H3> 📌 Vanjski prekidi (tipke)</H3>
 
 Svaka tipka povezana je na digitalni ulaz:
-<OL>
+<UL>
 <LI>Visoki prioritet: Pin 2 (INT0)</LI>
 
 <LI>Srednji prioritet: Pin 3 (INT1)</LI>
 
 <LI>Niski prioritet: Pin 4 (bez prekida, provjera u loop())</LI>
-</OL>
+</UL>
 Kada se tipka pritisne, odgovarajuća LED dioda (crvena, žuta, zelena) mijenja stanje.
 
 Debounce je implementiran softverski u loop() za niski prioritet koristeći delay(200).
