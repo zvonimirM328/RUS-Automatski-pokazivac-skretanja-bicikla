@@ -1,4 +1,4 @@
-#H2 📖 Lab1: Prekidi u Ugradbenim Sustavima
+<H2>📖 Lab1: Prekidi u Ugradbenim Sustavima</H2> 
 
 Poveznica za projekt: [Wokwi projekt](https://wokwi.com/projects/427284724839193601)
 
