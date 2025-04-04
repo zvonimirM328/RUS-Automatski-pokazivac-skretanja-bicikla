@@ -48,7 +48,7 @@ Svaka tipka povezana je na digitalni ulaz:
 <OL>
 <LI>Visoki prioritet: Pin 2 (INT0)</LI>
 
-<LI>Srednji prioritet: Pin 3 (INT1)</LI>LI>
+<LI>Srednji prioritet: Pin 3 (INT1)</LI>
 
 <LI>Niski prioritet: Pin 4 (bez prekida, provjera u loop())</LI>
 </OL>
