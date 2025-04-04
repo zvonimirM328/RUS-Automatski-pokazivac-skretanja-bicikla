@@ -18,18 +18,40 @@ Korištene funkcionalnosti:
 <H2> 2. Hardverske komponente</H2>
 Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru:
 
-Komponenta	Model	Uloga
-
-Mikrokontroler	Arduino Uno	Glavni upravljački sklop
-
-LED diode	4x (različite boje)	Signalizacija prekida
-
-Tipke (Buttons)	3x Tactile Switch	Aktivacija prekida
-
-Ultrazvučni senzor	HC-SR04	Mjerenje udaljenosti
-
-Logički analizator	Wokwi Logic	Analiza signala (simulacija)
-
+<table>
+<tbody>
+<tr>
+<td>&nbsp;Komponente </td>
+<td>&nbsp;Model&nbsp; </td>
+<td>Uloga&nbsp; </td>
+</tr>
+<tr>
+<td>&nbsp;Mikrokontroler </td>
+<td>&nbsp;Arduino Uno </td>
+<td>&nbsp;Glavni upravljački sklop </td>
+</tr>
+<tr>
+<td>&nbsp;LED diode </td>
+<td>&nbsp;4x (različite boje) </td>
+<td>&nbsp;Signalizacija prekida </td>
+</tr>
+<tr>
+<td>&nbsp;Tipke (Buttons) </td>
+<td>&nbsp;3x Tactile Switch </td>
+<td>&nbsp;Aktivacija prekida</td>
+</tr>
+<tr>
+<td>&nbsp;Ultrazvučni senzor </td>
+<td>&nbsp;HC-SR04</td>
+<td>&nbsp;Mjerenje udaljenosti</td>
+</tr>
+<tr>
+<td>&nbsp;Logički analizator </td>
+<td>&nbsp;Wokwi Logic </td>
+<td>&nbsp;Analiza signala (simulacija)</td>
+</tr>
+</tbody>
+</table>
 <H2> 3. Slika spojeva </H2>
 Sljedeća slika prikazuje način povezivanja komponenti u Wokwi simulatoru:
 
