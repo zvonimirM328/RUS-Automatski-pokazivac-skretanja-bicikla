@@ -17,7 +17,7 @@ Korištene funkcionalnosti:
 
 <H2> 2. Hardverske komponente</H2>
 Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru:
-</n>
+<br/>
 <table>
 <tbody>
 <tr>
