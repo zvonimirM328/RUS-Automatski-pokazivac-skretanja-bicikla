@@ -14,6 +14,7 @@ Korištene funkcionalnosti:
 
 ✅ Aktivacija LED-a putem ultrazvučnog senzora (HC-SR04) ako je objekt bliži od 10 cm
 
+
 2. Hardverske komponente
 Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru:
 
@@ -69,6 +70,7 @@ Ako je objekt bliže od 10 cm, plavi LED (pin 11) se pali; inače se gasi.
 
 Udaljenost se ispisuje u serijski monitor.
 
+
 5. Zaključak
 Ovaj laboratorijski zadatak uspješno demonstrira korištenje prekida na Arduino Uno mikrokontroleru.
 
@@ -85,7 +87,9 @@ Ovaj laboratorijski zadatak uspješno demonstrira korištenje prekida na Arduino
 Moguće buduće nadogradnje:
 
 ✅ Dodavanje prekida za senzor udaljenosti umjesto provjere u loop().
+
 ✅ Implementacija prioriteta prekida putem nested interrupts.
+
 🛠 Autor: Dan Hamin
 
 🎓 Predmet: Razvoj Ugradbenih Sustava
