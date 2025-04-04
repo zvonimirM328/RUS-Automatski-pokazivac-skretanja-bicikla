@@ -74,9 +74,13 @@ Ovaj laboratorijski zadatak uspješno demonstrira korištenje prekida na Arduino
 
 🔹 Prekidi omogućuju brzu reakciju na pritiske tipki i periodične događaje.
 
+
 🔹 Softverski debounce sprječava višestruke aktivacije za niski prioritet.
 
+
 🔹 Senzor udaljenosti i tajmer pokazuju primjenu u stvarnom vremenu.
+
+
 
 Moguće buduće nadogradnje:
 
