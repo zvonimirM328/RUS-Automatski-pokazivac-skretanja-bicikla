@@ -118,8 +118,8 @@ Moguće buduće nadogradnje:
 
 ✅ Implementacija prioriteta prekida putem nested interrupts.
 
-🛠 Autor: Dan Hamin
+<h3>🛠 Autor:</h3> Dan Hamin
 
-🎓 Predmet: Razvoj Ugradbenih Sustava
+<h3>🎓 Predmet:</h3> Razvoj Ugradbenih Sustava
 
-🏫 Fakultet: Tehničko Veleučilište Zagreb
+<h3>🏫 Fakultet:</h3> Tehničko Veleučilište Zagreb
