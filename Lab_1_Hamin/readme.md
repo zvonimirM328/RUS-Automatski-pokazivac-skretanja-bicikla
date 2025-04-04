@@ -1,9 +1,9 @@
-<H2>📖 Lab1: Prekidi u Ugradbenim Sustavima</H2> 
+<H1>📖 Lab1: Prekidi u Ugradbenim Sustavima</H1> 
 
 Poveznica za projekt: [Wokwi projekt](https://wokwi.com/projects/427284724839193601)
 
 
-#H2>1. Opis zadatka</h2>
+<H2>1. Opis zadatka</H2>
 Cilj ovog laboratorijskog rada je implementacija prekida na Arduino Uno mikrokontroleru koristeći tipke, tajmer i ultrazvučni senzor. Prekidi su povezani s LED diodama za vizualnu signalizaciju aktivnosti.
 
 Korištene funkcionalnosti:
