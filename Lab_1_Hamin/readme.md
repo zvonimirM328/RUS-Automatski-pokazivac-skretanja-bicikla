@@ -100,6 +100,7 @@ Udaljenost se ispisuje u serijski monitor.
 <H2> 5. Zaključak </H2>
 Ovaj laboratorijski zadatak uspješno demonstrira korištenje prekida na Arduino Uno mikrokontroleru.
 
+
 🔹 Prekidi omogućuju brzu reakciju na pritiske tipki i periodične događaje.
 
 
