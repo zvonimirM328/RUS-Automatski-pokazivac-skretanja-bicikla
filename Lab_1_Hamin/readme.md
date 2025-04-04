@@ -86,7 +86,7 @@ Moguće buduće nadogradnje:
 
 ✅ Dodavanje prekida za senzor udaljenosti umjesto provjere u loop().
 ✅ Implementacija prioriteta prekida putem nested interrupts.
-🛠 Autor: [Tvoje ime]
+🛠 Autor: Dan Hamin
 
 🎓 Predmet: Razvoj Ugradbenih Sustava
 
