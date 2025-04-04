@@ -3,7 +3,7 @@
 Poveznica za projekt: [Wokwi projekt](https://wokwi.com/projects/427284724839193601)
 
 
-<2h>1. Opis zadatka
+<2h>1. Opis zadatka</h2>
 Cilj ovog laboratorijskog rada je implementacija prekida na Arduino Uno mikrokontroleru koristeći tipke, tajmer i ultrazvučni senzor. Prekidi su povezani s LED diodama za vizualnu signalizaciju aktivnosti.
 
 Korištene funkcionalnosti:
