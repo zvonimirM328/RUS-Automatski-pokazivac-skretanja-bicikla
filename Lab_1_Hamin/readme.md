@@ -83,39 +83,33 @@ Softverski debouncing je implementiran za niski prioritet pomoću delay(200) fun
 
 <H3> 📌 Tajmerski prekid </H3>
 
-Timer1 generira prekid svake 1 sekunde (OCR1A = 15624, prescaler 1024).
+Timer1 generira prekid svakih 1 sekundu (vrijednost OCR1A postavljena na 15624, prescaler 1024).
 
-Aktivira ispis poruke u serijski monitor ("Tajmer: 1 sekunda!").
+Ovaj prekid omogućuje ispis poruke u serijskom monitoru ("Tajmer: 1 sekunda!").
 
 <H3> 📌 Ultrazvučni senzor (HC-SR04) </H3>
 
-Mjerenje udaljenosti pokreće se u loop(), ali može se povezati s tajmerom.
-
-Ako je objekt bliže od 10 cm, plavi LED (pin 11) se pali; inače se gasi.
-
-Udaljenost se ispisuje u serijski monitor.
+Mjerenje udaljenosti se aktivira u loop() funkciji, ali može biti povezano s tajmerom.
+Ako se objekt nalazi bliže od 10 cm, LED dioda na pin 11 (plava) se pali. Inače, LED dioda se gasi.
+Udaljenost objekta također se ispisuje u serijski monitor.
 
 
 <H2> 5. Zaključak </H2>
-Ovaj laboratorijski zadatak uspješno demonstrira korištenje prekida na Arduino Uno mikrokontroleru. 
+Ovaj laboratorijski zadatak uspješno demonstrira primjenu prekida na Arduino Uno mikrokontroleru.
+
+🔹 Prekidi omogućuju brz odgovor na pritiske tipki i periodične događaje.
 
 
-
-🔹 Prekidi omogućuju brzu reakciju na pritiske tipki i periodične događaje.
-
-
-🔹 Softverski debounce sprječava višestruke aktivacije za niski prioritet.
+🔹 Softverski debouncing sprječava višestruke aktivacije niskog prioriteta.
 
 
-🔹 Senzor udaljenosti i tajmer pokazuju primjenu u stvarnom vremenu.
-
+🔹 Senzor udaljenosti i tajmer ilustriraju primjenu u stvarnom vremenu.
 
 
 Moguće buduće nadogradnje:
 
-✅ Dodavanje prekida za senzor udaljenosti umjesto provjere u loop().
-
-✅ Implementacija prioriteta prekida putem nested interrupts.
+✅ Dodavanje prekida za senzor udaljenosti umjesto stalne provjere u loop().
+✅ Implementacija prioriteta prekida pomoću nested interrupts.
 
 <h3>🛠 Autor:</h3> Dan Hamin
 
