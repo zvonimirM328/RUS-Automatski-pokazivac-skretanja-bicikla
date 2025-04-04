@@ -4,15 +4,17 @@ Poveznica za projekt: [Wokwi projekt](https://wokwi.com/projects/427284724839193
 
 
 <H2>1. Opis zadatka</H2>
-Cilj ovog laboratorijskog rada je implementacija prekida na Arduino Uno mikrokontroleru koristeći tipke, tajmer i ultrazvučni senzor. Prekidi su povezani s LED diodama za vizualnu signalizaciju aktivnosti.
+Cilj ovog laboratorijskog rada je implementacija prekida na mikrokontroleru Arduino Uno korištenjem vanjskih tipki, tajmera i ultrazvučnog senzora. Prekidi su povezani s LED diodama koje služe kao vizualna signalizacija aktivnosti.
 
 Korištene funkcionalnosti:
 
-✅ Prekidi pomoću vanjskih tipki (INT0, INT1)
+✅ Vanjski prekidi uz pomoć tipki (INT0, INT1)
 
-✅ Prekid tajmera Timer1 za periodične radnje svake 1 sekunde
+✅ Prekid tajmera Timer1 za izvršavanje periodičnih radnji svakih 1 sekundu
 
-✅ Aktivacija LED-a putem ultrazvučnog senzora (HC-SR04) ako je objekt bliži od 10 cm
+✅ Aktivacija LED dioda putem ultrazvučnog senzora (HC-SR04) ako se objekt nalazi na udaljenosti manjoj od 10 cm.
+
+
 
 
 <H2> 2. Hardverske komponente</H2>
@@ -54,8 +56,7 @@ Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru:
 </tbody>
 </table>
 <H2> 3. Slika spojeva </H2>
-Sljedeća slika prikazuje način povezivanja komponenti u Wokwi simulatoru:
-
+Na sljedećoj slici prikazan je način povezivanja svih komponenti unutar Wokwi simulatora:
 
 
 
@@ -65,7 +66,7 @@ Sljedeća slika prikazuje način povezivanja komponenti u Wokwi simulatoru:
 
 
 <H2> 4. Opis rješenja </H2>
-Kod implementira prekide za tipke, tajmer i senzor koristeći Arduino C++.
+Kod u programu implementira prekide za tipke, tajmer i ultrazvučni senzor koristeći Arduino C++.
 
 <H3> 📌 Vanjski prekidi (tipke)</H3>
 
@@ -77,10 +78,8 @@ Svaka tipka povezana je na digitalni ulaz:
 
 <LI>Niski prioritet: Pin 4 (bez prekida, provjera u loop())</LI>
 </UL>
-Kada se tipka pritisne, odgovarajuća LED dioda (crvena, žuta, zelena) mijenja stanje.
-
-Debounce je implementiran softverski u loop() za niski prioritet koristeći delay(200).
-
+Kada se pritisne odgovarajuća tipka, LED dioda koja odgovara tom prioritetu (crvena za visoki, žuta za srednji, zelena za niski) mijenja svoj status.
+Softverski debouncing je implementiran za niski prioritet pomoću delay(200) funkcije.
 
 <H3> 📌 Tajmerski prekid </H3>
 
