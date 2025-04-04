@@ -109,6 +109,7 @@ Ovaj laboratorijski zadatak uspješno demonstrira primjenu prekida na Arduino Un
 Moguće buduće nadogradnje:
 
 ✅ Dodavanje prekida za senzor udaljenosti umjesto stalne provjere u loop().
+
 ✅ Implementacija prioriteta prekida pomoću nested interrupts.
 
 <h3>🛠 Autor:</h3> Dan Hamin
