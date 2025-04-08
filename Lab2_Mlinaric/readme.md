@@ -18,7 +18,7 @@ Korištene funkcionalnosti:
 
 ✅ Automatsko buđenje pomoću watchdog timera
 
-2. Hardverske komponente
+<h2>2. Hardverske komponente</h2>
 
 Komponenta	Model	Uloga
 Mikrokontroler	Arduino Uno	Upravljanje sustavom i sleep modovima
