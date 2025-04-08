@@ -3,6 +3,7 @@
 🔗 Poveznica za projekt: https://wokwi.com/projects/427581015265206366
 
 1. Opis zadatka
+
 Cilj ovog laboratorijskog rada je implementacija sleep modova na Arduino Uno mikrokontroleru kako bi se smanjila potrošnja energije tijekom neaktivnih perioda rada sustava.
 
 Program koristi LED diodu koja periodično trepće, a zatim mikrokontroler prelazi u sleep mode do sljedeće aktivnosti.
@@ -18,6 +19,7 @@ Korištene funkcionalnosti:
 ✅ Automatsko buđenje pomoću watchdog timera
 
 2. Hardverske komponente
+
 Komponenta	Model	Uloga
 Mikrokontroler	Arduino Uno	Upravljanje sustavom i sleep modovima
 LED dioda	Ugrađena (pin 13)	Vizualna signalizacija rada
@@ -35,15 +37,15 @@ Sljedeća slika prikazuje način povezivanja LED diode i tipkala:
 
 4. Opis rješenja
 
-Program je implementiran u Arduino okruženju koristeći biblioteku LowPower.h koja omogućuje jednostavno korištenje sleep modova.
+  Program je implementiran u Arduino okruženju koristeći biblioteku LowPower.h koja omogućuje jednostavno korištenje sleep modova.
 
 📌 Periodično treptanje LED-ice
 
-LED dioda trepće 5 puta (svijetli i gasi se u razmaku od 1 sekunde) kako bi se simulirala aktivna faza rada sustava.
+  LED dioda trepće 5 puta (svijetli i gasi se u razmaku od 1 sekunde) kako bi se simulirala aktivna faza rada sustava.
 
 📌 Ulazak u Sleep mode
 
-Nakon treptanja, mikrokontroler ulazi u Power-down sleep mode, koji značajno smanjuje potrošnju energije.
+  Nakon treptanja, mikrokontroler ulazi u Power-down sleep mode, koji značajno smanjuje potrošnju energije.
 
 cpp
 Kopiraj
@@ -53,16 +55,16 @@ Sleep traje ukupno 16 sekundi (2 x 8 sekundi), osim ako se ne dogodi buđenje.
 
 📌 Mehanizmi buđenja
 
-Pritisak tipkala – eksterni prekid (INT0) buđenje iz sna
+  Pritisak tipkala – eksterni prekid (INT0) buđenje iz sna
 
-Watchdog timer – automatsko buđenje nakon vremenskog intervala
+  Watchdog timer – automatsko buđenje nakon vremenskog intervala
 
 📌 Upravljanje izlaskom iz Sleep moda
 
 Mikrokontroler odmah prelazi natrag u aktivnu fazu nakon buđenja. Postoji zaštita od neželjenog višestrukog buđenja (flag wakeUpFlag).
 
 5. Zaključak
-6. 
+ 
 Ovaj laboratorijski rad uspješno demonstrira kako efikasno upravljati potrošnjom energije u ugradbenim sustavima koristeći sleep modove mikrokontrolera.
 
 🔹 Sleep modovi omogućuju drastično smanjenje potrošnje u neaktivnim fazama.
