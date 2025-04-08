@@ -1,6 +1,6 @@
 <h1>📖 Lab2: Upravljanje potrošnjom energije mikrokontrolera korištenjem Sleep moda</h1>
 
-🔗 Poveznica za projekt: https://wokwi.com/projects/427581015265206366
+🔗 Poveznica za projekt: [https://wokwi.com/projects/427581015265206366](https://wokwi.com/projects/427696344752524289)
 
 <h2>1. Opis zadatka</h2>
 
