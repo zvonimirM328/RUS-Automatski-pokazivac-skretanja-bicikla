@@ -2,7 +2,7 @@
 
 🔗 Poveznica za projekt: https://wokwi.com/projects/427581015265206366
 
-1. Opis zadatka
+<h2>1. Opis zadatka</h2>
 
 Cilj ovog laboratorijskog rada je implementacija sleep modova na Arduino Uno mikrokontroleru kako bi se smanjila potrošnja energije tijekom neaktivnih perioda rada sustava.
 
