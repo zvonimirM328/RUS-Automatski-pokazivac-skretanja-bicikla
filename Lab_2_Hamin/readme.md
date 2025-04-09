@@ -3,7 +3,7 @@
 **Poveznica za projekt:** [Wokwi projekt](https://wokwi.com/projects/427765641826069505)
 
 ## 1. Opis zadatka
-Cilj ovog laboratorijskog rada je implementacija upravljanja potrošnjom energije na mikrokontroleru ATmega328P (Arduino Uno) korištenjem sleep modova. Program omogućuje treptanje LED diode, ulazak u niskopotrošne režime i buđenje putem tipke ili Watchdog timera.
+Cilj ovog laboratorijskog zadatka je implementacija upravljanja potrošnjom energije na mikrokontroleru ATmega328P (Arduino Uno) korištenjem sleep modova. Program omogućuje treptanje LED diode, ulazak u niskopotrošne režime i buđenje putem tipke ili Watchdog timera.
 
 **Korištene funkcionalnosti:**
 - ✅ Treptanje LED diode tijekom 5 sekundi
@@ -23,7 +23,7 @@ Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru:
 | Tipka (Button)      | Tactile Switch  | Aktivacija prekida (INT0) |
 
 ## 3. Slika spojeva
-Na sljedećoj slici prikazan je način povezivanja komponenti unutar Wokwi simulatora:
+Slijedeća slika pokazuje način povezivanja komponenti unutar Wokwi simulatora:
 
 ![Arduino Setup](sleep.png)
 
