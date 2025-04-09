@@ -1,6 +1,6 @@
 # 💤 AVR Sleep Mode – Upravljanje potrošnjom energije
 
-[🔗 Otvori u Wokwi Simulatoru]([https://wokwi.com/projects/427250141739098369](https://wokwi.com/projects/427759710054799361))
+[🔗 Otvori u Wokwi Simulatoru](https://wokwi.com/projects/427759710054799361)
 
 ## 1. 📌 Opis zadatka
 
@@ -10,7 +10,7 @@ Cilj projekta je implementacija upravljanja energijom pomoću **sleep modova** n
 
 - Treptanje LED-ice tijekom 3 sekunde
 - Ulazak u sleep mode nakon završetka zadatka
-- Buđenje putem:![schema](https://github.com/user-attachments/assets/a687a55e-d7ba-473f-9136-b7afde1cbf90)
+- Buđenje putem:
 
   - Tipke (INT0 prekid)
   - Watchdog timera (~4s interval)
@@ -34,7 +34,7 @@ Cilj projekta je implementacija upravljanja energijom pomoću **sleep modova** n
 - Tipkalo koristi **internal pull-up** otpor
 
 
-![Uploading schema.png…]()
+![schema](https://github.com/user-attachments/assets/a687a55e-d7ba-473f-9136-b7afde1cbf90)
 
 ---
 
