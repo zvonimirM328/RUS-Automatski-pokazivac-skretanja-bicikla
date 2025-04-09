@@ -116,4 +116,4 @@ Moguće buduće nadogradnje:
 
 <h3>🎓 Predmet:</h3> Razvoj Ugradbenih Sustava
 
-<h3>🏫 Fakultet:</h3> Tehničko Veleučilište Zagreb
+<h3>🏫 Fakultet:</h3> Tehničko Veleučilište u Zagrebu
