@@ -51,14 +51,14 @@ void wakeFromButton() {
   if (!button_pressed) {
     wake_up = true;
     button_pressed = true;
-    Serial.println("Budjenje putem tipke (INT0)");
+    Serial.println("Budenje putem tipke (INT0)");
   }
 }
 
 ISR(WDT_vect) {
 
   wake_up = true;
-  Serial.println("Budjenje putem Watchdog timera");
+  Serial.println("Budenje putem Watchdog timera");
 
 }
 
@@ -82,7 +82,7 @@ void enterSleep() {
   }
   
   sleep_enable();
-  ADCSRA &= ~(1 << ADEN); // Isključi ADC
+  ADCSRA &= ~(1 << ADEN);
   sleep_cpu();
   sleep_disable();
   ADCSRA |= (1 << ADEN);
