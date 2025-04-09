@@ -1,6 +1,6 @@
 # 📖 Lab 2: Upravljanje potrošnjom energije korištenjem sleep modova
 
-**Poveznica za projekt:** [Wokwi projekt](https://wokwi.com/projects/new/arduino-uno)
+**Poveznica za projekt:** [Wokwi projekt](https://wokwi.com/projects/427765641826069505)
 
 ## 1. Opis zadatka
 Cilj ovog laboratorijskog rada je implementacija upravljanja potrošnjom energije na mikrokontroleru ATmega328P (Arduino Uno) korištenjem sleep modova. Program omogućuje treptanje LED diode, ulazak u niskopotrošne režime i buđenje putem tipke ili Watchdog timera.
@@ -25,8 +25,8 @@ Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru:
 ## 3. Slika spojeva
 Na sljedećoj slici prikazan je način povezivanja komponenti unutar Wokwi simulatora:
 
-![Arduino Setup](https://via.placeholder.com/300x200.png?text=Arduino+Setup)  
-*(Napomena: Zamijenite ovu poveznicu sa stvarnom slikom dijagrama iz Wokwi-a nakon što ga spremite.)*
+sleep.png 
+
 
 ## 4. Opis rješenja
 Kod u programu implementira upravljanje sleep modovima koristeći Arduino C++.
@@ -52,7 +52,7 @@ Kod u programu implementira upravljanje sleep modovima koristeći Arduino C++.
   - Idle: 1.5 mA
   - Standby: 0.001 mA
 
-5. Zaključak
+##5. Zaključak
 Ovaj laboratorijski zadatak uspješno demonstrira upravljanje potrošnjom energije na ATmega328P mikrokontroleru.
 
 🔹 Sleep modovi značajno smanjuju potrošnju između aktivnih perioda.
@@ -63,9 +63,9 @@ Moguće buduće nadogradnje:
 ✅ Dodavanje senzora za automatsko buđenje temeljem vanjskih uvjeta.
 ✅ Implementacija mjerenja stvarne potrošnje na fizičkom hardveru.
 🛠 Autor
-[Vaše ime]
+Dan Hamin
 Datum: 09. travnja 2025.
 🎓 Predmet
 Razvoj Ugradbenih Sustava
 🏫 Fakultet
-[Vaš fakultet, npr. Tehničko Veleučilište Zagreb]
+Tehničko Veleučilište Zagreb
