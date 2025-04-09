@@ -25,7 +25,7 @@ Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru:
 ## 3. Slika spojeva
 Na sljedećoj slici prikazan je način povezivanja komponenti unutar Wokwi simulatora:
 
-sleep.png 
+![Arduino Setup](sleep.png)
 
 
 ## 4. Opis rješenja
@@ -60,11 +60,11 @@ Ovaj laboratorijski zadatak uspješno demonstrira upravljanje potrošnjom energi
 ### 🔹 Simulacija potrošnje pomaže u razumijevanju različitih režima. 
 Moguće buduće nadogradnje:
 
-**✅ Dodavanje senzora za automatsko buđenje temeljem vanjskih uvjeta.**
-**✅ Implementacija mjerenja stvarne potrošnje na fizičkom hardveru.**
+- ✅ Dodavanje senzora za automatsko buđenje temeljem vanjskih uvjeta.
+- ✅ Implementacija mjerenja stvarne potrošnje na fizičkom hardveru.
+
 ### 🛠 Autor
 Dan Hamin
-Datum: 09. travnja 2025.
 ### 🎓 Predmet
 Razvoj Ugradbenih Sustava
 ### 🏫 Fakultet
