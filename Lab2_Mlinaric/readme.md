@@ -1,6 +1,6 @@
 # 💤 AVR Sleep Mode – Upravljanje potrošnjom energije
 
-[🔗 Otvori u Wokwi Simulatoru](https://wokwi.com/projects/427759710054799361)
+[🔗 Poveznica za projekt](https://wokwi.com/projects/427759710054799361)
 
 ## 1. 📌 Opis zadatka
 
