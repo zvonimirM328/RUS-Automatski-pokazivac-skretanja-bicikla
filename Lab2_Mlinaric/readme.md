@@ -29,12 +29,11 @@ Cilj projekta je implementacija upravljanja energijom pomoću **sleep modova** n
 
 ## 3. 🔌 Shema spoja (Wokwi)
 
+![schema](https://github.com/user-attachments/assets/a687a55e-d7ba-473f-9136-b7afde1cbf90)
+
 - LED ➜ PB5 (Arduino Uno: Digital 13)  
 - Tipkalo ➜ PD2 (Arduino Uno: Digital 2 / INT0)  
 - Tipkalo koristi **internal pull-up** otpor
-
-
-![schema](https://github.com/user-attachments/assets/a687a55e-d7ba-473f-9136-b7afde1cbf90)
 
 ---
 
@@ -83,5 +82,4 @@ Projekt demonstrira kako koristiti sleep modove na AVR mikrokontroleru kako bi s
 
 ---
 
-## 🗂️ Projekt struktura
 
