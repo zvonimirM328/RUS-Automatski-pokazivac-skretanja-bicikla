@@ -65,4 +65,4 @@ Dan Hamin
 ### 🎓 Predmet
 Razvoj Ugradbenih Sustava
 ### 🏫 Fakultet
-Tehničko Veleučilište Zagreb
+Tehničko Veleučilište u Zagrebu
