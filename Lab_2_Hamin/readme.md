@@ -55,17 +55,17 @@ Kod u programu implementira upravljanje sleep modovima koristeći Arduino C++.
 ##5. Zaključak
 Ovaj laboratorijski zadatak uspješno demonstrira upravljanje potrošnjom energije na ATmega328P mikrokontroleru.
 
-🔹 Sleep modovi značajno smanjuju potrošnju između aktivnih perioda.
-🔹 INT0 prekid i Watchdog timer omogućuju fleksibilno buđenje.
-🔹 Simulacija potrošnje pomaže u razumijevanju različitih režima.
+###🔹 Sleep modovi značajno smanjuju potrošnju između aktivnih perioda. -
+###🔹 INT0 prekid i Watchdog timer omogućuju fleksibilno buđenje. -
+###🔹 Simulacija potrošnje pomaže u razumijevanju različitih režima. -
 Moguće buduće nadogradnje:
 
 ✅ Dodavanje senzora za automatsko buđenje temeljem vanjskih uvjeta.
 ✅ Implementacija mjerenja stvarne potrošnje na fizičkom hardveru.
-🛠 Autor
+###🛠 Autor
 Dan Hamin
 Datum: 09. travnja 2025.
-🎓 Predmet
+###🎓 Predmet
 Razvoj Ugradbenih Sustava
-🏫 Fakultet
+###🏫 Fakultet
 Tehničko Veleučilište Zagreb
