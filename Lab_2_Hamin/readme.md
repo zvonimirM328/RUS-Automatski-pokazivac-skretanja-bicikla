@@ -58,10 +58,7 @@ Ovaj laboratorijski zadatak uspješno demonstrira upravljanje potrošnjom energi
 ### 🔹 Sleep modovi značajno smanjuju potrošnju između aktivnih perioda. 
 ### 🔹 INT0 prekid i Watchdog timer omogućuju fleksibilno buđenje. 
 ### 🔹 Simulacija potrošnje pomaže u razumijevanju različitih režima. 
-Moguće buduće nadogradnje:
 
-- ✅ Dodavanje senzora za automatsko buđenje temeljem vanjskih uvjeta.
-- ✅ Implementacija mjerenja stvarne potrošnje na fizičkom hardveru.
 
 ### 🛠 Autor
 Dan Hamin
