@@ -60,7 +60,7 @@ Na sljedećoj slici prikazan je način povezivanja svih komponenti unutar Wokwi 
 
 
 
-![Arduino Setup](slika.png)
+![Arduino Setup](slika0.png)
 
 
 
