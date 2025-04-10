@@ -1,40 +1,32 @@
-#define BUTTON_HIGH 2    // Visoki prioritet (pin s prekidom)
-#define BUTTON_MED 3     // Srednji prioritet (pin s prekidom)
-#define BUTTON_LOW 4     // Niski prioritet (bez prekida, provjera u loop-u)
-#define LED_HIGH 5       // LED za visoki prioritet
-#define LED_MED 6        // LED za srednji prioritet
-#define LED_LOW 7        // LED za niski prioritet
-#define TRIG_PIN 9       // HC-SR04 Trig pin
-#define ECHO_PIN 10      // HC-SR04 Echo pin
-#define LED_DISTANCE 11  // LED za senzor udaljenosti
+#define BUTTON_HIGH 2
+#define BUTTON_MED 3
+#define BUTTON_LOW 4
+#define LED_HIGH 5
+#define LED_MED 6
+#define LED_LOW 7
+#define TRIG_PIN 9
+#define ECHO_PIN 10
+#define LED_DISTANCE 11
 
 volatile bool highPressed = false;
 volatile bool medPressed = false;
 volatile bool timerFlag = false;
 
 void setupTimer() {
-  noInterrupts(); // Isključi prekide tijekom postavljanja
-  TCCR1A = 0;     // Normalni način rada
-  TCCR1B = 0;     // Zaustavi tajmer
-  TCNT1 = 0;      // Resetiraj brojač
-  OCR1A = 15624;  // 1 sekunda na 16MHz s prescalerom 1024
-  TCCR1B |= (1 << WGM12); // CTC mod
-  TCCR1B |= (1 << CS12) | (1 << CS10); // Prescaler 1024
-  TIMSK1 |= (1 << OCIE1A); // Omogući prekid na podudaranje
-  interrupts();   // Uključi prekide
+  noInterrupts();
+  TCCR1A = 0;
+  TCCR1B = 0;
+  TCNT1 = 0;
+  OCR1A = 15624;
+  TCCR1B |= (1 << WGM12);
+  TCCR1B |= (1 << CS12) | (1 << CS10);
+  TIMSK1 |= (1 << OCIE1A);
+  interrupts();
 }
 
-void highPriorityISR() {
-  highPressed = true;
-}
-
-void medPriorityISR() {
-  medPressed = true;
-}
-
-ISR(TIMER1_COMPA_vect) {
-  timerFlag = true;
-}
+void highPriorityISR() { highPressed = true; }
+void medPriorityISR() { medPressed = true; }
+ISR(TIMER1_COMPA_vect) { timerFlag = true; }
 
 long measureDistance() {
   digitalWrite(TRIG_PIN, LOW);
@@ -43,7 +35,7 @@ long measureDistance() {
   delayMicroseconds(10);
   digitalWrite(TRIG_PIN, LOW);
   long duration = pulseIn(ECHO_PIN, HIGH);
-  return duration * 0.034 / 2; // Udaljenost u cm
+  return duration * 0.034 / 2;
 }
 
 void setup() {
@@ -61,39 +53,53 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(BUTTON_MED), medPriorityISR, FALLING);
 
   setupTimer();
-
   Serial.begin(9600);
 }
 
 void loop() {
-  // Obrada visokog prioriteta
-  if (highPressed) {
+  bool highState = digitalRead(BUTTON_HIGH) == LOW;
+  bool medState = digitalRead(BUTTON_MED) == LOW;
+  bool lowState = digitalRead(BUTTON_LOW) == LOW;
+
+  static bool lastMedState = HIGH;
+  static bool lastLowState = HIGH;
+
+  if (highState) {
     digitalWrite(LED_HIGH, !digitalRead(LED_HIGH));
+    digitalWrite(LED_MED, LOW);
+    digitalWrite(LED_LOW, LOW);
+    Serial.println("Visoki prioritet aktivan - svi niži ugašeni!");
     highPressed = false;
-    Serial.println("Visoki prioritet aktiviran!");
   }
-
-  // Obrada srednjeg prioriteta
-  if (medPressed) {
+  else if (medState) {
     digitalWrite(LED_MED, !digitalRead(LED_MED));
+    digitalWrite(LED_LOW, LOW);
+    Serial.println("Srednji prioritet aktivan - niski ugašen!");
     medPressed = false;
-    Serial.println("Srednji prioritet aktiviran!");
   }
-
-  // Obrada niskog prioriteta (bez prekida)
-  if (digitalRead(BUTTON_LOW) == LOW) {
+  else if (lowState && !medState && !highState) {
     digitalWrite(LED_LOW, !digitalRead(LED_LOW));
-    delay(200); // Debouncing
-    Serial.println("Niski prioritet aktiviran!");
+    Serial.println("Niski prioritet aktivan!");
   }
 
-  // Obrada tajmera
+  if (medState && lowState && lastLowState != lowState) {
+    Serial.println("Nije moguće uključiti niski prioritet jer je srednji prioritet uključen!");
+  }
+  if (highState && medState && lastMedState != medState) {
+    Serial.println("Nije moguće uključiti srednji prioritet jer je visoki prioritet uključen!");
+  }
+  if (highState && lowState && lastLowState != lowState) {
+    Serial.println("Nije moguće uključiti niski prioritet jer je visoki prioritet uključen!");
+  }
+
+  lastMedState = medState;
+  lastLowState = lowState;
+
   if (timerFlag) {
     Serial.println("Tajmer: 1 sekunda!");
     timerFlag = false;
   }
 
-  // Mjerenje udaljenosti
   long distance = measureDistance();
   if (distance < 10) {
     digitalWrite(LED_DISTANCE, HIGH);
@@ -104,6 +110,5 @@ void loop() {
     digitalWrite(LED_DISTANCE, LOW);
   }
 
-  delay(100); 
+  delay(200);
 }
-
