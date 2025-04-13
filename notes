@@ -11,4 +11,4 @@ MPU6050:
 
 DIODE
 
--> nova ledica koja se koristi u slucaju kocenja obje se ledice upale
+-> nova ledica koja se koristi u slucaju kocenja obje se ledice upale(HIGH PRIORITY)
