@@ -1,0 +1,5 @@
+previsoka i preniska temperatura gasi mcu
+osim akceleracije ce se koristiti i rotacija za provjeru skretanja bicikla
+sleepmode ako se rotacija ne dezava nakon 5 min
+rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
+  -nemogucnost pravilnog mjerenja pa istraziti
