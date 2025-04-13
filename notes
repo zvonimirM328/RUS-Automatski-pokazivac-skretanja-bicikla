@@ -15,6 +15,14 @@ DIODE
 
 -> nova ledica koja se koristi u slucaju kocenja obje se ledice upale(HIGH PRIORITY)
 
+Status LED (opcionalno):
+
+plava LED: sleep mode
+
+Crvena LED: greška / temperatura
+
+Zelena LED: normalan rad
+
 
 POZELNJE FUNKCIONALNOSTI
 battery indikator -> led bar graph
