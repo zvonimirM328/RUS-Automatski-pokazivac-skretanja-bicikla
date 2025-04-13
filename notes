@@ -8,6 +8,8 @@ MPU6050:
 -> sleepmode ako ne dolazi do promjene rotacije nakon 2 min
 -> rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
   -nemogucnost pravilnog mjerenja pa istraziti
+Implementiraj filter (npr. dead zone) ±3° oko nule da spreči lažnu aktivaciju.
+
 
 DIODE
 
