@@ -1,5 +1,5 @@
 Opcenito
-gumb za manualno ukljucivanje i iskljucivanje(slipmode/iskljucivanje nakon zastoja 2 min)
+gumb za manualno ukljucivanje i iskljucivanje(sleepmode/iskljucivanje nakon zastoja 2 min)
 
 MPU6050: 
 -> skretanje bicikla blinka potrebnu ledicu
