@@ -1,21 +1,21 @@
-Opcenito
->gumb za manualno ukljucivanje i iskljucivanje(sleepmode/iskljucivanje nakon zastoja 2 min)
-
-MPU6050: 
->skretanje bicikla blinka potrebnu ledicu
-> previsoka i preniska temperatura gasi mcu
-> osim akceleracije ce se koristiti i rotacija za provjeru skretanja bicikla
-> sleepmode ako ne dolazi do promjene rotacije nakon 2 min
-> rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
-  -nemogucnost pravilnog mjerenja pa istraziti
->Implementiraj filter (npr. dead zone) ±3° oko nule da spreči lažnu aktivaciju.
-
-DIODE
+DODANO
+skretanje bicikla blinka potrebnu ledicu
+previsoka i preniska temperatura gasi mcu
+Implementiraj filter (npr. dead zone) ±3° oko nule da spreči lažnu aktivaciju.
 -> nova ledica koja se koristi u slucaju kocenja obje se ledice upale(HIGH PRIORITY)
 Status LED (opcionalno):
 plava LED: sleep mode
 Crvena LED: greška / temperatura
 Zelena LED: normalan rad
+
+NEDOSTAJE
+gumb za manualno ukljucivanje i iskljucivanje(sleepmode/iskljucivanje nakon zastoja 2 min)
+sleepmode ako ne dolazi do promjene rotacije nakon 2 min
+
+MAKNUTI 
+osim akceleracije ce se koristiti i rotacija za provjeru skretanja bicikla
+rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
+Opcenito
 
 MOGUĆA UNAPRJEĐENJA: 
 battery indikator -> led bar graph
