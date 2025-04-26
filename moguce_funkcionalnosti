@@ -8,6 +8,7 @@ plava LED: sleep mode
 Crvena LED: greška / temperatura
 Zelena LED: normalan rad
 Buzzer komponenta za gašenje 
+rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
 
 NEDOSTAJE
 gumb za manualno ukljucivanje i iskljucivanje(sleepmode/iskljucivanje nakon zastoja 2 min)
@@ -19,7 +20,7 @@ SLEEPMODE PLAVA
 
 MAKNUTI 
 osim akceleracije ce se koristiti i rotacija za provjeru skretanja bicikla
-rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
+
 Opcenito
 
 OFF THE TABLE: 
