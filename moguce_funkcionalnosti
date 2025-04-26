@@ -10,9 +10,7 @@ MPU6050:
   -nemogucnost pravilnog mjerenja pa istraziti
 Implementiraj filter (npr. dead zone) ±3° oko nule da spreči lažnu aktivaciju.
 
-
 DIODE
-
 -> nova ledica koja se koristi u slucaju kocenja obje se ledice upale(HIGH PRIORITY)
 
 Status LED (opcionalno):
