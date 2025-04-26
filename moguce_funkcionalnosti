@@ -1,14 +1,14 @@
 Opcenito
-gumb za manualno ukljucivanje i iskljucivanje(sleepmode/iskljucivanje nakon zastoja 2 min)
+>gumb za manualno ukljucivanje i iskljucivanje(sleepmode/iskljucivanje nakon zastoja 2 min)
 
 MPU6050: 
--> skretanje bicikla blinka potrebnu ledicu
--> previsoka i preniska temperatura gasi mcu
--> osim akceleracije ce se koristiti i rotacija za provjeru skretanja bicikla
--> sleepmode ako ne dolazi do promjene rotacije nakon 2 min
--> rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
+> skretanje bicikla blinka potrebnu ledicu
+> previsoka i preniska temperatura gasi mcu
+> osim akceleracije ce se koristiti i rotacija za provjeru skretanja bicikla
+> sleepmode ako ne dolazi do promjene rotacije nakon 2 min
+> rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
   -nemogucnost pravilnog mjerenja pa istraziti
-Implementiraj filter (npr. dead zone) ±3° oko nule da spreči lažnu aktivaciju.
+>Implementiraj filter (npr. dead zone) ±3° oko nule da spreči lažnu aktivaciju.
 
 DIODE
 -> nova ledica koja se koristi u slucaju kocenja obje se ledice upale(HIGH PRIORITY)
