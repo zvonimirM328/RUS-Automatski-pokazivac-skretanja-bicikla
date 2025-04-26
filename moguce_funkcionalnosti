@@ -9,14 +9,12 @@ Crvena LED: greška / temperatura
 Zelena LED: normalan rad
 Buzzer komponenta za gašenje 
 rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
-
-NEDOSTAJE
 gumb za manualno ukljucivanje i iskljucivanje(sleepmode/iskljucivanje nakon zastoja 2 min)
 sleepmode ako ne dolazi do promjene rotacije nakon 2 min
+
+NEDOSTAJE
 battery indikator -> led bar graph
 OTPORNICI NA DIODE
-MAKNUTI KALIBRACIJU
-SLEEPMODE PLAVA
 
 MAKNUTI 
 osim akceleracije ce se koristiti i rotacija za provjeru skretanja bicikla
