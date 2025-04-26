@@ -1,27 +1,18 @@
 DODANO
-skretanje bicikla blinka potrebnu ledicu
-previsoka i preniska temperatura gasi mcu
-Implementiraj filter (npr. dead zone) ±3° oko nule da spreči lažnu aktivaciju.
--> nova ledica koja se koristi u slucaju kocenja obje se ledice upale(HIGH PRIORITY)
-Status LED (opcionalno):
-plava LED: sleep mode
-Crvena LED: greška / temperatura
-Zelena LED: normalan rad
-Buzzer komponenta za gašenje 
-rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
-gumb za manualno ukljucivanje i iskljucivanje(sleepmode/iskljucivanje nakon zastoja 2 min)
-sleepmode ako ne dolazi do promjene rotacije nakon 2 min
 
-NEDOSTAJE
-battery indikator -> led bar graph
-OTPORNICI NA DIODE
+-> skretanje bicikla blinka potrebnu ledicu
+-> previsoka i preniska temperatura gasi mcu
+-> implementiraj filter (npr. dead zone) ±3° oko nule da spreči lažnu aktivaciju.
+-> u slucaju kocenja obje se ledice upale(HIGH PRIORITY)
+-> battery indikator -> LED bar graph
+-> buzzer komponenta za gašenje
+-> gumb za manualno ukljucivanje i iskljucivanje
+-> sleepmode ako ne dolazi do promjene rotacije nakon 2 min
+-> rekalibritari akceleraciju da se aktivira poslije +/- 0 stupnja
 
-MAKNUTI 
-osim akceleracije ce se koristiti i rotacija za provjeru skretanja bicikla
-
-Opcenito
-
-OFF THE TABLE: 
-Logovanje podataka(sd card)
+Status LED:
+-plava LED: sleep mode
+-Crvena LED: greška / temperatura
+-Zelena LED: normalan rad
 
 
