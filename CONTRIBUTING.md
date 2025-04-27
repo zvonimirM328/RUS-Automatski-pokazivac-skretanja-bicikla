@@ -21,6 +21,11 @@ Hvala što želite doprinijeti ovom projektu! Prije nego što započnete, molimo
 ## Kako početi?
 
 1. Forkajte projekt
-2. Klonirajte svoj fork:
-  git clone https://github.com/vaše-korisničko-ime/ime-projekta.git
-3. Napravite novu granu:
+2. Klonirajte svoj fork: git clone https://github.com/vaše-korisničko-ime/ime-projekta.git
+3. Napravite novu granu: git checkout -b naziv-grane
+4. Unesite promjene i počinite: git commit -m "Opis promjene"
+5. Pushajte granu: git push origin naziv-grane
+6. Otvorite Pull Request na originalnom repozitoriju.
+
+Hvala na vašim doprinosima! 🚴‍♂️💡
+
