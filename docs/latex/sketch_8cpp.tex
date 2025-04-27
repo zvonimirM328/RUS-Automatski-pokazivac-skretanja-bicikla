@@ -1,0 +1,285 @@
+\doxysection{F\+:/\+Desktop/\+IT/\+Diplomski/2. semestar/\+Razvoj ugradbenih sustava/\+RUS-\/\+Automatski-\/pokazivac-\/skretanja-\/bicikla/sketch.cpp File Reference}
+\hypertarget{sketch_8cpp}{}\label{sketch_8cpp}\index{F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla/sketch.cpp@{F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla/sketch.cpp}}
+
+
+Main code for the project.  
+
+
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$MPU6050.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{sketch_8cpp_a3c302b6c124bfdb5a873e54a346b997a}\label{sketch_8cpp_a3c302b6c124bfdb5a873e54a346b997a} 
+\#define {\bfseries FILTER\+\_\+\+SIZE}~10
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sketch_8cpp_a644f8ec2f3c1a46215eeeeecb4af9ef9}{update\+Battery\+Bar\+Graph}} (float voltage)
+\begin{DoxyCompactList}\small\item\em Updates the LED bar graph based on battery voltage. \end{DoxyCompactList}\item 
+\Hypertarget{sketch_8cpp_a37b1839968615757fb202e133573b7d3}\label{sketch_8cpp_a37b1839968615757fb202e133573b7d3} 
+void {\bfseries initialize\+System} ()
+\begin{DoxyCompactList}\small\item\em Initializes system components (MPU6050, pins, serial, etc.). \end{DoxyCompactList}\item 
+\Hypertarget{sketch_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{sketch_8cpp_a4fc01d736fe50cf5b977f755b675f11d} 
+void {\bfseries setup} ()
+\begin{DoxyCompactList}\small\item\em Arduino setup function. \end{DoxyCompactList}\item 
+\Hypertarget{sketch_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{sketch_8cpp_afe461d27b9c48d5921c00d521181f12f} 
+void {\bfseries loop} ()
+\begin{DoxyCompactList}\small\item\em Arduino main loop function. \end{DoxyCompactList}\item 
+\Hypertarget{sketch_8cpp_a325af2e427df3b4ce0ce4a7778f42ebe}\label{sketch_8cpp_a325af2e427df3b4ce0ce4a7778f42ebe} 
+void {\bfseries calibrate\+MPU} ()
+\begin{DoxyCompactList}\small\item\em Calibrates MPU6050 by calculating offsets. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{sketch_8cpp_a3cef309164a43c2795ca9c1ae3b8a45a}{filter\+Tilt}} (float tilt)
+\begin{DoxyCompactList}\small\item\em Applies moving average filter to tilt values. \end{DoxyCompactList}\item 
+\Hypertarget{sketch_8cpp_aa9118fcc53fc3a9ba93842858201533a}\label{sketch_8cpp_aa9118fcc53fc3a9ba93842858201533a} 
+void {\bfseries enter\+Sleep\+Mode} ()
+\begin{DoxyCompactList}\small\item\em Puts the system into sleep mode. \end{DoxyCompactList}\item 
+\Hypertarget{sketch_8cpp_aba415adba5abfb7e64e199e1955e896c}\label{sketch_8cpp_aba415adba5abfb7e64e199e1955e896c} 
+void {\bfseries check\+Long\+Press} ()
+\begin{DoxyCompactList}\small\item\em Checks for a long press on the button to power off manually. \end{DoxyCompactList}\item 
+\Hypertarget{sketch_8cpp_ae54fd738c24170f2fa6ab5158b591bf7}\label{sketch_8cpp_ae54fd738c24170f2fa6ab5158b591bf7} 
+void {\bfseries power\+Down\+Forever} ()
+\begin{DoxyCompactList}\small\item\em Powers down the system permanently (manual or temperature error). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{sketch_8cpp_a88c170d7ee5608442cacbd97992d5ed8}\label{sketch_8cpp_a88c170d7ee5608442cacbd97992d5ed8} 
+MPU6050 {\bfseries mpu}
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_adbeeef3f7a47a9c34fcd488e56925526}{led\+Left}} = 9
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_a3434cc942cd9e8754564800f7ce886d0}{led\+Right}} = 10
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_ada59c105623149656e236aa18dde8bec}{led\+Blue}} = 4
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_abdaa7e302e35cf528bfcf79a08bf44bf}{led\+Red}} = 5
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_a6c1ed7d45baa243a8e72e59e5171c83a}{led\+Green}} = 6
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_a4ddb8b6ae564eb22f7c74f2683a63b8e}{button\+Pin}} = 2
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_a988a608b186de34e793324aee3ec73ee}{buzzer\+Pin}} = 8
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_ad80be64de7355ced4d339f3f8031ffd8}{battery\+Pin}} = A0
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_a6810817e33a184658d28ca19935b899d}{bar\+Graph\+Pins}} \mbox{[}$\,$\mbox{]} = \{3, 7, 11, 12, 13, A1, A2, A3, 0, 1\}
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_a6661fdaf2c92930aae375bfa84a6ffdd}{bar\+Graph\+Size}} = 10
+\item 
+\Hypertarget{sketch_8cpp_a46665e23a4eb50a6bdfea1e258879c54}\label{sketch_8cpp_a46665e23a4eb50a6bdfea1e258879c54} 
+bool {\bfseries is\+Sleep} = false
+\item 
+\Hypertarget{sketch_8cpp_a0ed9a56dc277f1cd08be338fe23f1364}\label{sketch_8cpp_a0ed9a56dc277f1cd08be338fe23f1364} 
+bool {\bfseries is\+Powered\+Down} = false
+\item 
+\Hypertarget{sketch_8cpp_a948e9ac4190c1a81a9c3db7420bf9f61}\label{sketch_8cpp_a948e9ac4190c1a81a9c3db7420bf9f61} 
+unsigned long {\bfseries last\+Motion\+Time} = 0
+\item 
+\Hypertarget{sketch_8cpp_a82d7abe1d886785c724a9a915c729c0a}\label{sketch_8cpp_a82d7abe1d886785c724a9a915c729c0a} 
+float {\bfseries acc\+X\+\_\+offset} = 0
+\item 
+\Hypertarget{sketch_8cpp_a6d34366e5dc7bfce82c080f385c35788}\label{sketch_8cpp_a6d34366e5dc7bfce82c080f385c35788} 
+float {\bfseries acc\+Z\+\_\+offset} = 0
+\item 
+\Hypertarget{sketch_8cpp_aee94e8779afede740bb4c572c0c54d3a}\label{sketch_8cpp_aee94e8779afede740bb4c572c0c54d3a} 
+float {\bfseries tilt\+Buffer} \mbox{[}FILTER\+\_\+\+SIZE\mbox{]}
+\item 
+\Hypertarget{sketch_8cpp_afe745a8631fc5435d0f6cb73f5f8bec5}\label{sketch_8cpp_afe745a8631fc5435d0f6cb73f5f8bec5} 
+float {\bfseries running\+Sum} = 0
+\item 
+\Hypertarget{sketch_8cpp_a73b963945a418c57630c1b66ce2aa74f}\label{sketch_8cpp_a73b963945a418c57630c1b66ce2aa74f} 
+int {\bfseries buffer\+Index} = 0
+\item 
+\Hypertarget{sketch_8cpp_a8bdb6736e2ffaf669809d52bc3c38456}\label{sketch_8cpp_a8bdb6736e2ffaf669809d52bc3c38456} 
+unsigned long {\bfseries last\+Button\+Press\+Time} = 0
+\item 
+\Hypertarget{sketch_8cpp_a7d466b68c5e24096e6bcd063f3ab8736}\label{sketch_8cpp_a7d466b68c5e24096e6bcd063f3ab8736} 
+const unsigned long {\bfseries debounce\+Delay} = 200
+\item 
+\Hypertarget{sketch_8cpp_a2f0ee20d24f07e166d7f4adafb28cb43}\label{sketch_8cpp_a2f0ee20d24f07e166d7f4adafb28cb43} 
+bool {\bfseries button\+Held} = false
+\item 
+\Hypertarget{sketch_8cpp_aa788a921cec975c7cc79b22350b53c12}\label{sketch_8cpp_aa788a921cec975c7cc79b22350b53c12} 
+unsigned long {\bfseries button\+Pressed\+Time} = 0
+\item 
+const unsigned long \mbox{\hyperlink{sketch_8cpp_ad3b90af1e6a105c50f90ab50a2a3de87}{long\+Press\+Duration}} = 2000
+\item 
+\Hypertarget{sketch_8cpp_a3083fd2e4a272a5eec473c56e8d9932a}\label{sketch_8cpp_a3083fd2e4a272a5eec473c56e8d9932a} 
+unsigned long {\bfseries last\+Blink\+Time} = 0
+\item 
+const unsigned long \mbox{\hyperlink{sketch_8cpp_ac7d4e2e9f61d5f0323476c9ce728210c}{blink\+Interval}} = 500
+\item 
+\Hypertarget{sketch_8cpp_a08dbc8fa8eee6ad95aa230b9a5d10d25}\label{sketch_8cpp_a08dbc8fa8eee6ad95aa230b9a5d10d25} 
+bool {\bfseries blink\+State} = false
+\item 
+const unsigned long \mbox{\hyperlink{sketch_8cpp_a23edcdbedf11bbdad95b04fb99844a13}{temp\+Error\+Duration}} = 10000
+\item 
+\Hypertarget{sketch_8cpp_aaac10dbfa1d7959d83233217fa3f6219}\label{sketch_8cpp_aaac10dbfa1d7959d83233217fa3f6219} 
+unsigned long {\bfseries temp\+Error\+Start\+Time} = 0
+\item 
+\Hypertarget{sketch_8cpp_a30d1009b4d4fa304be52a0110c68cc11}\label{sketch_8cpp_a30d1009b4d4fa304be52a0110c68cc11} 
+bool {\bfseries temp\+Error\+Active} = false
+\item 
+const unsigned long \mbox{\hyperlink{sketch_8cpp_a3a10c4e85a93559e58d66823fcdfb88a}{accel\+Check\+Interval}} = 500
+\item 
+const int \mbox{\hyperlink{sketch_8cpp_a2126ca37cef877d896cc6ecdb399cfc3}{accel\+Threshold}} = 200
+\item 
+\Hypertarget{sketch_8cpp_a02141bd473cd90ffd1d026da324bc2da}\label{sketch_8cpp_a02141bd473cd90ffd1d026da324bc2da} 
+unsigned long {\bfseries last\+Print\+Time} = 0
+\item 
+const unsigned long \mbox{\hyperlink{sketch_8cpp_ac80f4b1f85d9d31117de7a3a50cafd33}{print\+Interval}} = 1000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main code for the project. 
+
+\begin{DoxyAuthor}{Author}
+Hamin i Mlinaric 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+95 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/04-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sketch_8cpp_a3cef309164a43c2795ca9c1ae3b8a45a}\index{sketch.cpp@{sketch.cpp}!filterTilt@{filterTilt}}
+\index{filterTilt@{filterTilt}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{filterTilt()}{filterTilt()}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a3cef309164a43c2795ca9c1ae3b8a45a} 
+float filter\+Tilt (\begin{DoxyParamCaption}\item[{float}]{tilt}{}\end{DoxyParamCaption})}
+
+
+
+Applies moving average filter to tilt values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tilt} & Raw tilt input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filtered tilt value. 
+\end{DoxyReturn}
+\Hypertarget{sketch_8cpp_a644f8ec2f3c1a46215eeeeecb4af9ef9}\index{sketch.cpp@{sketch.cpp}!updateBatteryBarGraph@{updateBatteryBarGraph}}
+\index{updateBatteryBarGraph@{updateBatteryBarGraph}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{updateBatteryBarGraph()}{updateBatteryBarGraph()}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a644f8ec2f3c1a46215eeeeecb4af9ef9} 
+void update\+Battery\+Bar\+Graph (\begin{DoxyParamCaption}\item[{float}]{voltage}{}\end{DoxyParamCaption})}
+
+
+
+Updates the LED bar graph based on battery voltage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em voltage} & Current battery voltage. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{sketch_8cpp_a3a10c4e85a93559e58d66823fcdfb88a}\index{sketch.cpp@{sketch.cpp}!accelCheckInterval@{accelCheckInterval}}
+\index{accelCheckInterval@{accelCheckInterval}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{accelCheckInterval}{accelCheckInterval}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a3a10c4e85a93559e58d66823fcdfb88a} 
+const unsigned long accel\+Check\+Interval = 500}
+
+Accelerometer check interval (ms) \Hypertarget{sketch_8cpp_a2126ca37cef877d896cc6ecdb399cfc3}\index{sketch.cpp@{sketch.cpp}!accelThreshold@{accelThreshold}}
+\index{accelThreshold@{accelThreshold}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{accelThreshold}{accelThreshold}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a2126ca37cef877d896cc6ecdb399cfc3} 
+const int accel\+Threshold = 200}
+
+Acceleration threshold \Hypertarget{sketch_8cpp_a6810817e33a184658d28ca19935b899d}\index{sketch.cpp@{sketch.cpp}!barGraphPins@{barGraphPins}}
+\index{barGraphPins@{barGraphPins}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{barGraphPins}{barGraphPins}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a6810817e33a184658d28ca19935b899d} 
+const int bar\+Graph\+Pins\mbox{[}$\,$\mbox{]} = \{3, 7, 11, 12, 13, A1, A2, A3, 0, 1\}}
+
+LED bar graph pins \Hypertarget{sketch_8cpp_a6661fdaf2c92930aae375bfa84a6ffdd}\index{sketch.cpp@{sketch.cpp}!barGraphSize@{barGraphSize}}
+\index{barGraphSize@{barGraphSize}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{barGraphSize}{barGraphSize}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a6661fdaf2c92930aae375bfa84a6ffdd} 
+const int bar\+Graph\+Size = 10}
+
+Number of segments in LED bar graph \Hypertarget{sketch_8cpp_ad80be64de7355ced4d339f3f8031ffd8}\index{sketch.cpp@{sketch.cpp}!batteryPin@{batteryPin}}
+\index{batteryPin@{batteryPin}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{batteryPin}{batteryPin}}
+{\footnotesize\ttfamily \label{sketch_8cpp_ad80be64de7355ced4d339f3f8031ffd8} 
+const int battery\+Pin = A0}
+
+Battery voltage simulation \Hypertarget{sketch_8cpp_ac7d4e2e9f61d5f0323476c9ce728210c}\index{sketch.cpp@{sketch.cpp}!blinkInterval@{blinkInterval}}
+\index{blinkInterval@{blinkInterval}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{blinkInterval}{blinkInterval}}
+{\footnotesize\ttfamily \label{sketch_8cpp_ac7d4e2e9f61d5f0323476c9ce728210c} 
+const unsigned long blink\+Interval = 500}
+
+Blinking interval (ms) \Hypertarget{sketch_8cpp_a4ddb8b6ae564eb22f7c74f2683a63b8e}\index{sketch.cpp@{sketch.cpp}!buttonPin@{buttonPin}}
+\index{buttonPin@{buttonPin}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{buttonPin}{buttonPin}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a4ddb8b6ae564eb22f7c74f2683a63b8e} 
+const int button\+Pin = 2}
+
+Button \Hypertarget{sketch_8cpp_a988a608b186de34e793324aee3ec73ee}\index{sketch.cpp@{sketch.cpp}!buzzerPin@{buzzerPin}}
+\index{buzzerPin@{buzzerPin}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{buzzerPin}{buzzerPin}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a988a608b186de34e793324aee3ec73ee} 
+const int buzzer\+Pin = 8}
+
+Buzzer \Hypertarget{sketch_8cpp_ada59c105623149656e236aa18dde8bec}\index{sketch.cpp@{sketch.cpp}!ledBlue@{ledBlue}}
+\index{ledBlue@{ledBlue}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{ledBlue}{ledBlue}}
+{\footnotesize\ttfamily \label{sketch_8cpp_ada59c105623149656e236aa18dde8bec} 
+const int led\+Blue = 4}
+
+Blue LED (calibration/sleep) \Hypertarget{sketch_8cpp_a6c1ed7d45baa243a8e72e59e5171c83a}\index{sketch.cpp@{sketch.cpp}!ledGreen@{ledGreen}}
+\index{ledGreen@{ledGreen}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{ledGreen}{ledGreen}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a6c1ed7d45baa243a8e72e59e5171c83a} 
+const int led\+Green = 6}
+
+Green LED (normal operation) \Hypertarget{sketch_8cpp_adbeeef3f7a47a9c34fcd488e56925526}\index{sketch.cpp@{sketch.cpp}!ledLeft@{ledLeft}}
+\index{ledLeft@{ledLeft}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{ledLeft}{ledLeft}}
+{\footnotesize\ttfamily \label{sketch_8cpp_adbeeef3f7a47a9c34fcd488e56925526} 
+const int led\+Left = 9}
+
+Yellow LED (left) \Hypertarget{sketch_8cpp_abdaa7e302e35cf528bfcf79a08bf44bf}\index{sketch.cpp@{sketch.cpp}!ledRed@{ledRed}}
+\index{ledRed@{ledRed}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{ledRed}{ledRed}}
+{\footnotesize\ttfamily \label{sketch_8cpp_abdaa7e302e35cf528bfcf79a08bf44bf} 
+const int led\+Red = 5}
+
+Red LED (temperature warning) \Hypertarget{sketch_8cpp_a3434cc942cd9e8754564800f7ce886d0}\index{sketch.cpp@{sketch.cpp}!ledRight@{ledRight}}
+\index{ledRight@{ledRight}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{ledRight}{ledRight}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a3434cc942cd9e8754564800f7ce886d0} 
+const int led\+Right = 10}
+
+Yellow LED (right) \Hypertarget{sketch_8cpp_ad3b90af1e6a105c50f90ab50a2a3de87}\index{sketch.cpp@{sketch.cpp}!longPressDuration@{longPressDuration}}
+\index{longPressDuration@{longPressDuration}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{longPressDuration}{longPressDuration}}
+{\footnotesize\ttfamily \label{sketch_8cpp_ad3b90af1e6a105c50f90ab50a2a3de87} 
+const unsigned long long\+Press\+Duration = 2000}
+
+2 seconds long press duration \Hypertarget{sketch_8cpp_ac80f4b1f85d9d31117de7a3a50cafd33}\index{sketch.cpp@{sketch.cpp}!printInterval@{printInterval}}
+\index{printInterval@{printInterval}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{printInterval}{printInterval}}
+{\footnotesize\ttfamily \label{sketch_8cpp_ac80f4b1f85d9d31117de7a3a50cafd33} 
+const unsigned long print\+Interval = 1000}
+
+Print every 1 second \Hypertarget{sketch_8cpp_a23edcdbedf11bbdad95b04fb99844a13}\index{sketch.cpp@{sketch.cpp}!tempErrorDuration@{tempErrorDuration}}
+\index{tempErrorDuration@{tempErrorDuration}!sketch.cpp@{sketch.cpp}}
+\doxysubsubsection{\texorpdfstring{tempErrorDuration}{tempErrorDuration}}
+{\footnotesize\ttfamily \label{sketch_8cpp_a23edcdbedf11bbdad95b04fb99844a13} 
+const unsigned long temp\+Error\+Duration = 10000}
+
+Temperature error timeout (ms) 

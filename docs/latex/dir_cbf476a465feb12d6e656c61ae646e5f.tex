@@ -1,0 +1,104 @@
+\doxysection{F\+:/\+Desktop/\+IT/\+Diplomski/2. semestar/\+Razvoj ugradbenih sustava/\+RUS-\/\+Automatski-\/pokazivac-\/skretanja-\/bicikla/\+Lab2\+\_\+\+Mlinaric Directory Reference}
+\hypertarget{dir_cbf476a465feb12d6e656c61ae646e5f}{}\label{dir_cbf476a465feb12d6e656c61ae646e5f}\index{F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla/Lab2\_Mlinaric Directory Reference@{F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla/Lab2\_Mlinaric Directory Reference}}
+
+
+\doxysubsection{Detailed Description}
+\href{https://wokwi.com/projects/427759710054799361}{\texttt{ 🔗 Poveznica za projekt}}\hypertarget{readme.md_autotoc_md1}{}\doxysubsection{\texorpdfstring{1. 📌 Opis zadatka}{1. 📌 Opis zadatka}}\label{readme.md_autotoc_md1}
+Cilj projekta je implementacija upravljanja energijom pomoću {\bfseries{sleep modova}} na {\bfseries{AVR mikrokontroleru (ATmega328P)}}. Mikrokontroler izvodi osnovnu funkciju (treptanje LED-\/ice), a zatim prelazi u {\bfseries{niskopotrošni režim (Power-\/down mode)}} do sljedećeg buđenja.\hypertarget{readme.md_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{✅ Funkcionalnosti\+:}{✅ Funkcionalnosti\+:}}\label{readme.md_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Treptanje LED-\/ice tijekom 3 sekunde
+\item Ulazak u sleep mode nakon završetka zadatka
+\item Buđenje putem\+:
+\begin{DoxyItemize}
+\item Tipke (INT0 prekid)
+\item Watchdog timera (\texorpdfstring{$\sim$}{\string~}4s interval)
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{readme.md_autotoc_md4}{}\doxysubsection{\texorpdfstring{2. ⚙️ Korištene komponente}{2. ⚙️ Korištene komponente}}\label{readme.md_autotoc_md4}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Komponenta   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Model   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Uloga    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Komponenta   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Model   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Uloga    }\\\cline{1-3}
+\endhead
+Mikrokontroler   &ATmega328P (Arduino Uno)   &Upravljanje logikom i sleep modom    \\\cline{1-3}
+LED dioda   &Crvena (na PB5)   &Signalizira aktivnost mikrokontrolera    \\\cline{1-3}
+Tipkalo (Button)   &Tactile Switch (na PD2)   &Aktivira INT0 prekid za buđenje   \\\cline{1-3}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{readme.md_autotoc_md6}{}\doxysubsection{\texorpdfstring{3. 🔌 Shema spoja (Wokwi)}{3. 🔌 Shema spoja (Wokwi)}}\label{readme.md_autotoc_md6}
+
+
+
+\begin{DoxyItemize}
+\item LED ➜ PB5 (Arduino Uno\+: Digital 13) ~\newline
+
+\item Tipkalo ➜ PD2 (Arduino Uno\+: Digital 2 / INT0) ~\newline
+
+\item Tipkalo koristi {\bfseries{internal pull-\/up}} otpor
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{readme.md_autotoc_md8}{}\doxysubsection{\texorpdfstring{4. 💡 Funkcionalni opis}{4. 💡 Funkcionalni opis}}\label{readme.md_autotoc_md8}
+\hypertarget{readme.md_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{🔄 Glavni tok}{🔄 Glavni tok}}\label{readme.md_autotoc_md9}
+
+\begin{DoxyItemize}
+\item Mikrokontroler uključuje LED i trepće 3 skunde.
+\item Nakon toga gasi LED i prelazi u {\bfseries{Power-\/down sleep mode}}.
+\end{DoxyItemize}\hypertarget{readme.md_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{🌙 Sleep mod}{🌙 Sleep mod}}\label{readme.md_autotoc_md10}
+
+\begin{DoxyItemize}
+\item Koristi se {\ttfamily SLEEP\+\_\+\+MODE\+\_\+\+PWR\+\_\+\+DOWN} za minimalnu potrošnju.
+\item {\ttfamily sleep\+\_\+bod\+\_\+disable()} koristi se za dodatno smanjenje potrošnje (isključuje brown-\/out detektor).
+\end{DoxyItemize}\hypertarget{readme.md_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{⏰ Prekidi za buđenje}{⏰ Prekidi za buđenje}}\label{readme.md_autotoc_md11}
+
+\begin{DoxyItemize}
+\item {\bfseries{INT0 (tipka na PD2)\+:}} Vanjski prekid (falling edge) budi mikrokontroler.
+\item {\bfseries{Watchdog Timer\+:}} Prekida svakih \texorpdfstring{$\sim$}{\string~}4 sekunde, također budi mikrokontroler.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{readme.md_autotoc_md13}{}\doxysubsection{\texorpdfstring{5. 🧪 Testiranje}{5. 🧪 Testiranje}}\label{readme.md_autotoc_md13}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Scenarij   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Očekivano ponašanje    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Scenarij   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Očekivano ponašanje    }\\\cline{1-2}
+\endhead
+LED treptanje   &LED bljeska 3 sekunde    \\\cline{1-2}
+Sleep mode   &LED se gasi, Arduino ulazi u low-\/power    \\\cline{1-2}
+Pritisak tipke   &LED ponovno počinje treptati    \\\cline{1-2}
+Automatsko buđenje   &LED se aktivira svakih \texorpdfstring{$\sim$}{\string~}4s ako tipka nije pritisnuta   \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{readme.md_autotoc_md15}{}\doxysubsection{\texorpdfstring{6. 📚 Zaključak}{6. 📚 Zaključak}}\label{readme.md_autotoc_md15}
+Projekt demonstrira kako koristiti sleep modove na AVR mikrokontroleru kako bi se značajno {\bfseries{smanjila potrošnja energije}} bez kompromisa u funkcionalnosti.\hypertarget{readme.md_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{🔧 Moguće nadogradnje\+:}{🔧 Moguće nadogradnje\+:}}\label{readme.md_autotoc_md16}
+
+\begin{DoxyItemize}
+\item Analiza i usporedba svih AVR sleep modova
+\item Mjerenje realne potrošnje putem strujnog mjerača
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{readme.md_autotoc_md18}{}\doxysubsection{\texorpdfstring{👨‍💻 Autor}{👨‍💻 Autor}}\label{readme.md_autotoc_md18}
+{\bfseries{Zvonimir Mlinarić}} ~\newline
+ 🎓 {\itshape Razvoj Ugradbenih Sustava} ~\newline
+ 🏫 {\itshape Tehničko Veleučilište Zagreb}
+
+\DoxyHorRuler{0}
+ 

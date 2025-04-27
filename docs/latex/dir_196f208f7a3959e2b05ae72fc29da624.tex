@@ -1,0 +1,95 @@
+\doxysection{F\+:/\+Desktop/\+IT/\+Diplomski/2. semestar/\+Razvoj ugradbenih sustava/\+RUS-\/\+Automatski-\/pokazivac-\/skretanja-\/bicikla/\+Lab\+\_\+1\+\_\+\+Hamin Directory Reference}
+\hypertarget{dir_196f208f7a3959e2b05ae72fc29da624}{}\label{dir_196f208f7a3959e2b05ae72fc29da624}\index{F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla/Lab\_1\_Hamin Directory Reference@{F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla/Lab\_1\_Hamin Directory Reference}}
+
+
+\doxysubsection{Detailed Description}
+\doxysubsection*{📖 Lab1\+: Prekidi u Ugradbenim Sustavima}
+
+Poveznica za projekt\+: \href{https://wokwi.com/projects/427284724839193601}{\texttt{ Wokwi projekt}}
+
+\doxysubsubsection*{1. Opis zadatka}
+
+Cilj ovog laboratorijskog rada je implementacija prekida na mikrokontroleru Arduino Uno korištenjem vanjskih tipki, tajmera i ultrazvučnog senzora. Prekidi su povezani s LED diodama koje služe kao vizualna signalizacija aktivnosti.
+
+Korištene funkcionalnosti\+:
+
+✅ Vanjski prekidi uz pomoć tipki (INT0, INT1)
+
+✅ Prekid tajmera Timer1 za izvršavanje periodičnih radnji svakih 1 sekundu
+
+✅ Aktivacija LED dioda putem ultrazvučnog senzora (HC-\/\+SR04) ako se objekt nalazi na udaljenosti manjoj od 10 cm.
+
+\doxysubsubsection*{2. Hardverske komponente}
+
+Za realizaciju sustava korištene su sljedeće komponente u Wokwi simulatoru\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+~Komponente  &~Model~  &Uloga~   \\\cline{1-3}
+~Mikrokontroler  &~Arduino Uno  &~Glavni upravljački sklop   \\\cline{1-3}
+~LED diode  &~4x (različite boje)  &~Signalizacija prekida   \\\cline{1-3}
+~Tipke (Buttons)  &~3x Tactile Switch  &~Aktivacija prekida  \\\cline{1-3}
+~Ultrazvučni senzor  &~HC-\/\+SR04 &~Mjerenje udaljenosti  \\\cline{1-3}
+~Logički analizator  &~Wokwi Logic  &~Analiza signala (simulacija)   \\\cline{1-3}
+\end{longtabu}
+\doxysubsubsection*{3. Slika spojeva }
+
+Na sljedećoj slici prikazan je način povezivanja svih komponenti unutar Wokwi simulatora\+:
+
+
+
+\doxysubsubsection*{4. Opis rješenja }
+
+Kod u programu implementira prekide za tipke, tajmer i ultrazvučni senzor koristeći Arduino C++.
+
+\doxysubsubsubsection*{📌 Vanjski prekidi (tipke)}
+
+Svaka tipka povezana je na digitalni ulaz\+: 
+\begin{DoxyItemize}
+\item Visoki prioritet\+: Pin 2 (INT0)
+
+
+\item Srednji prioritet\+: Pin 3 (INT1)
+
+
+\item Niski prioritet\+: Pin 4 (bez prekida, provjera u loop()) 
+\end{DoxyItemize}Kada se pritisne odgovarajuća tipka, LED dioda koja odgovara tom prioritetu (crvena za visoki, žuta za srednji, zelena za niski) mijenja svoj status. Softverski debouncing je implementiran za niski prioritet pomoću delay(200) funkcije.
+
+\doxysubsubsubsection*{📌 Tajmerski prekid }
+
+Timer1 generira prekid svakih 1 sekundu (vrijednost OCR1A postavljena na 15624, prescaler 1024).
+
+Ovaj prekid omogućuje ispis poruke u serijskom monitoru ("{}\+Tajmer\+: 1 sekunda!"{}).
+
+\doxysubsubsubsection*{📌 Ultrazvučni senzor (HC-\/\+SR04) }
+
+Mjerenje udaljenosti se aktivira u loop() funkciji, ali može biti povezano s tajmerom. Ako se objekt nalazi bliže od 10 cm, LED dioda na pin 11 (plava) se pali. Inače, LED dioda se gasi. Udaljenost objekta također se ispisuje u serijski monitor.
+
+\doxysubsubsection*{5. Zaključak }
+
+Ovaj laboratorijski zadatak uspješno demonstrira primjenu prekida na Arduino Uno mikrokontroleru.
+
+🔹 Prekidi omogućuju brz odgovor na pritiske tipki i periodične događaje.
+
+🔹 Softverski debouncing sprječava višestruke aktivacije niskog prioriteta.
+
+🔹 Senzor udaljenosti i tajmer ilustriraju primjenu u stvarnom vremenu.
+
+Moguće buduće nadogradnje\+:
+
+✅ Dodavanje prekida za senzor udaljenosti umjesto stalne provjere u loop().
+
+✅ Implementacija prioriteta prekida pomoću nested interrupts.
+
+\doxysubsubsubsection*{🛠 Autor\+:}
+
+Dan Hamin
+
+\doxysubsubsubsection*{🎓 Predmet\+:}
+
+Razvoj Ugradbenih Sustava
+
+\doxysubsubsubsection*{🏫 Fakultet\+:}
+
+Tehničko Veleučilište u Zagrebu 

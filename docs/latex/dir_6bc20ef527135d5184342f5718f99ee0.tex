@@ -1,0 +1,92 @@
+\doxysection{F\+:/\+Desktop/\+IT/\+Diplomski/2. semestar/\+Razvoj ugradbenih sustava/\+RUS-\/\+Automatski-\/pokazivac-\/skretanja-\/bicikla/\+Lab1\+\_\+\+Mlinaric Directory Reference}
+\hypertarget{dir_6bc20ef527135d5184342f5718f99ee0}{}\label{dir_6bc20ef527135d5184342f5718f99ee0}\index{F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla/Lab1\_Mlinaric Directory Reference@{F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla/Lab1\_Mlinaric Directory Reference}}
+
+
+\doxysubsection{Detailed Description}
+\doxysubsection*{📖 Lab1\+: Prekidi u Ugradbenim Sustavima}
+
+Poveznica za projekt\+: \href{https://wokwi.com/projects/427246398407736321}{\texttt{ https\+://wokwi.\+com/projects/427246398407736321}}
+
+\doxysubsubsection*{1. Opis zadatka}
+
+Cilj ovog laboratorijskog rada je implementacija prekida (interrupts) na Arduino Mega 2560 pomoću tipki, tajmera i ultrazvučnog senzora. Svaki prekid aktivira određenu LED diodu kako bi se vizualizirala aktivnost.
+
+Korištene funkcionalnosti\+:
+
+✅ Prekidi pomoću vanjskih tipki (INT0, INT1, INT2)
+
+✅ Prekid tajmera Timer1 za periodične radnje
+
+✅ Prekid putem ultrazvučnog senzora (HC-\/\+SR04) ako je objekt bliži od 100 cm
+
+\doxysubsubsection*{2. Hardverske komponente}
+
+Za realizaciju sustava korišteni su sljedeći dijelovi\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Komponenta}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Model}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Uloga}}    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Komponenta}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Model}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Uloga}}    }\\\cline{1-3}
+\endhead
+{\bfseries{Mikrokontroler}}   &Arduino Mega 2560   &Glavni upravljački sklop    \\\cline{1-3}
+{\bfseries{LED diode}}   &5x (različite boje)   &Signalizacija prekida    \\\cline{1-3}
+{\bfseries{Tipke (Buttons)}}   &3x Tactile Switch   &Aktivacija prekida    \\\cline{1-3}
+{\bfseries{Ultrazvučni senzor}}   &HC-\/\+SR04   &Mjerenje udaljenosti    \\\cline{1-3}
+{\bfseries{Logički analizator}}   &WOKWI LOGIC   &Analiza signala (simulacija)   \\\cline{1-3}
+\end{longtabu}
+
+
+\doxysubsubsection*{3. Slika spojeva}
+
+Sljedeća slika prikazuje način povezivanja komponenti\+:
+
+
+
+\doxysubsubsection*{4. Opis rješenja}
+
+Kod implementira prekide za tipke, tajmer i senzor koristeći Arduino C++.
+
+📌 Vanjski prekidi (tipke)
+
+Svaka tipka je povezana na prekidni ulaz (INT0, INT1, INT2).
+
+Kada se tipka pritisne, LED dioda trepće 10 puta.
+
+Implementiran je debounce kako bi se izbjegle neželjene višestruke aktivacije.
+
+📌 Tajmerski prekid
+
+Timer1 se koristi za generiranje prekida svakih 1 sekundu.
+
+Timer aktivira LED diodu (LED\+\_\+\+TIMER) i poziva funkciju za provjeru udaljenosti senzora.
+
+📌 Ultrazvučni senzor (HC-\/\+SR04)
+
+Timer prekid aktivira mjerenje udaljenosti pomoću HC-\/\+SR04 senzora.
+
+Ako je objekt bliže od 100 cm, aktivira se prekid senzora i narančasta LED dioda trepće dok se ne udalji objekt.
+
+\doxysubsubsection*{5. Zaključak}
+
+Ovaj laboratorijski zadatak uspješno demonstrira korištenje prekida na Arduino Mega 2560.
+
+🔹 Prekidi omogućuju brzu i efikasnu reakciju sustava na događaje.
+
+🔹 Debounce logika sprječava neželjene višestruke prekide uzrokovane mehaničkim vibracijama tipki.
+
+🔹 Tajmer omogućuje periodične provjere, čime se osigurava pravovremena detekcija udaljenosti.
+
+Moguće buduće nadogradnje\+:
+
+✅ Implementacija više razina alarma na temelju udaljenosti.
+
+🛠 Autor\+: Zvonimir Mlinarić
+
+🎓 Predmet\+: Razvoj Ugradbenih sustava
+
+🏫 Fakultet\+: Tehničko Veleučilište Zagreb 

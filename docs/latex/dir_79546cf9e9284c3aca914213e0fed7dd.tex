@@ -1,0 +1,74 @@
+\doxysection{F\+:/\+Desktop/\+IT/\+Diplomski/2. semestar/\+Razvoj ugradbenih sustava/\+RUS-\/\+Automatski-\/pokazivac-\/skretanja-\/bicikla/\+Lab\+\_\+2\+\_\+\+Hamin Directory Reference}
+\hypertarget{dir_79546cf9e9284c3aca914213e0fed7dd}{}\label{dir_79546cf9e9284c3aca914213e0fed7dd}\index{F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla/Lab\_2\_Hamin Directory Reference@{F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla/Lab\_2\_Hamin Directory Reference}}
+
+
+\doxysubsection{Detailed Description}
+{\bfseries{Poveznica za projekt\+:}} \href{https://wokwi.com/projects/427765641826069505}{\texttt{ Wokwi projekt}}\hypertarget{readme.md_autotoc_md21}{}\doxysubsection{\texorpdfstring{1. Opis zadatka}{1. Opis zadatka}}\label{readme.md_autotoc_md21}
+Cilj ovog laboratorijskog zadatka je implementacija upravljanja potrošnjom energije na mikrokontroleru ATmega328P (Arduino Uno) korištenjem sleep modova. U napravljenom programu dolazi do e treptanja crvene LED diode, ulazak u sleep modove i buđenje putem tipke(\+INT0 PREKID) ili Watchdog timera.
+
+{\bfseries{Korištene funkcionalnosti\+:}}
+\begin{DoxyItemize}
+\item ✅ Treptanje LED diode tijekom 5 sekundi
+\item ✅ Ulazak u sleep mode (Power-\/down, Idle, Standby) nakon zadatka
+\item ✅ Buđenje putem\+:
+\begin{DoxyItemize}
+\item Tipke (INT0 prekid)
+\item Watchdog timera (\texorpdfstring{$\sim$}{\string~}4s interval)
+\end{DoxyItemize}
+\item ✅ Simulacija potrošnje energije u Serial Monitoru
+\end{DoxyItemize}\hypertarget{readme.md_autotoc_md22}{}\doxysubsection{\texorpdfstring{2. Hardverske komponente}{2. Hardverske komponente}}\label{readme.md_autotoc_md22}
+Ovaj program koristi slijedeće komponete u Wokwi simulatoru\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Komponente   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Model   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Uloga    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Komponente   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Model   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Uloga    }\\\cline{1-3}
+\endhead
+Mikrokontroler   &Arduino Uno   &Glavni upravljački sklop    \\\cline{1-3}
+LED dioda   &Crvena LED   &Signalizacija aktivnosti    \\\cline{1-3}
+Tipka (Button)   &Tactile Switch   &Aktivacija prekida (INT0)   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{readme.md_autotoc_md23}{}\doxysubsection{\texorpdfstring{3. Slika spojeva}{3. Slika spojeva}}\label{readme.md_autotoc_md23}
+Slijedeća slika pokazuje način povezivanja komponenti unutar Wokwi simulatora\+:
+
+\hypertarget{readme.md_autotoc_md24}{}\doxysubsection{\texorpdfstring{4. Opis rješenja}{4. Opis rješenja}}\label{readme.md_autotoc_md24}
+Za pisanje koda se koristi Arduino C++.\hypertarget{readme.md_autotoc_md25}{}\doxysubsubsection{\texorpdfstring{📌 Treptanje LED diode}{📌 Treptanje LED diode}}\label{readme.md_autotoc_md25}
+
+\begin{DoxyItemize}
+\item LED na pinu 13 trepti 5 sekundi (500 ms ON, 500 ms OFF).
+\item Potrošnja u aktivnom stanju simulirana je kao \texorpdfstring{$\sim$}{\string~}5 mA.
+\end{DoxyItemize}\hypertarget{readme.md_autotoc_md26}{}\doxysubsubsection{\texorpdfstring{📌 Sleep modovi}{📌 Sleep modovi}}\label{readme.md_autotoc_md26}
+
+\begin{DoxyItemize}
+\item {\bfseries{Power-\/down\+:}} Najniža potrošnja (\texorpdfstring{$\sim$}{\string~}0.1 µA), oscilator isključen.
+\item {\bfseries{Idle\+:}} Viša potrošnja (\texorpdfstring{$\sim$}{\string~}1.5 mA), timeri aktivni.
+\item {\bfseries{Standby\+:}} Niska potrošnja (\texorpdfstring{$\sim$}{\string~}1 µA), oscilator uključen za brže buđenje.
+\item Mikrokontroler prelazi u sleep mode odmah nakon treptanja, isključujući ADC za dodatnu uštedu.
+\end{DoxyItemize}\hypertarget{readme.md_autotoc_md27}{}\doxysubsubsection{\texorpdfstring{📌 Mehanizmi buđenja}{📌 Mehanizmi buđenja}}\label{readme.md_autotoc_md27}
+
+\begin{DoxyItemize}
+\item {\bfseries{Tipka (INT0)\+:}} Povezana na pin 2, koristi padajući brid za prekid. Softverski debouncing sprječava višestruke ispise.
+\item {\bfseries{Watchdog timer\+:}} Postavljen na \texorpdfstring{$\sim$}{\string~}4 sekunde, automatski budi mikrokontroler.
+\end{DoxyItemize}\hypertarget{readme.md_autotoc_md28}{}\doxysubsubsection{\texorpdfstring{📌 Simulacija potrošnje}{📌 Simulacija potrošnje}}\label{readme.md_autotoc_md28}
+
+\begin{DoxyItemize}
+\item Potrošnja se ispisuje u Serial Monitoru temeljem podataka iz datasheet-\/a ATmega328P\+:
+\begin{DoxyItemize}
+\item Aktivno\+: 5 mA
+\item Power-\/down\+: 0.\+0001 mA
+\item Idle\+: 1.\+5 mA
+\item Standby\+: 0.\+001 mA
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{readme.md_autotoc_md29}{}\doxysubsection{\texorpdfstring{5. Zaključak}{5. Zaključak}}\label{readme.md_autotoc_md29}
+Ovaj laboratorijski zadatak uspješno demonstrira upravljanje potrošnjom energije na ATmega328P mikrokontroleru.\hypertarget{readme.md_autotoc_md30}{}\doxysubsubsection{\texorpdfstring{🔹 Sleep modovi značajno smanjuju potrošnju između aktivnih perioda.}{🔹 Sleep modovi značajno smanjuju potrošnju između aktivnih perioda.}}\label{readme.md_autotoc_md30}
+\hypertarget{readme.md_autotoc_md31}{}\doxysubsubsection{\texorpdfstring{🔹 INT0 prekid i Watchdog timer omogućuju fleksibilno buđenje.}{🔹 INT0 prekid i Watchdog timer omogućuju fleksibilno buđenje.}}\label{readme.md_autotoc_md31}
+\hypertarget{readme.md_autotoc_md32}{}\doxysubsubsection{\texorpdfstring{🔹 Simulacija potrošnje pomaže u razumijevanju različitih režima.}{🔹 Simulacija potrošnje pomaže u razumijevanju različitih režima.}}\label{readme.md_autotoc_md32}
+\hypertarget{readme.md_autotoc_md33}{}\doxysubsubsection{\texorpdfstring{🛠 Autor}{🛠 Autor}}\label{readme.md_autotoc_md33}
+Dan Hamin \hypertarget{readme.md_autotoc_md34}{}\doxysubsubsection{\texorpdfstring{🎓 Predmet}{🎓 Predmet}}\label{readme.md_autotoc_md34}
+Razvoj Ugradbenih Sustava \hypertarget{readme.md_autotoc_md35}{}\doxysubsubsection{\texorpdfstring{🏫 Fakultet}{🏫 Fakultet}}\label{readme.md_autotoc_md35}
+Tehničko Veleučilište u Zagrebu 
