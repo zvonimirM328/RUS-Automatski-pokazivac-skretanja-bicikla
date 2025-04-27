@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['mehanizmi_20buđenja_0',['📌 Mehanizmi buđenja',['../F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-Automatski-pokazivac-skretanja-bicikla/Lab_2_Hamin/readme.md#autotoc_md27',1,'']]],
-  ['mod_1',['🌙 Sleep mod',['../F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-Automatski-pokazivac-skretanja-bicikla/Lab2_Mlinaric/readme.md#autotoc_md10',1,'']]],
-  ['modovi_2',['📌 Sleep modovi',['../F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-Automatski-pokazivac-skretanja-bicikla/Lab_2_Hamin/readme.md#autotoc_md26',1,'']]],
-  ['modovi_20značajno_20smanjuju_20potrošnju_20između_20aktivnih_20perioda_3',['🔹 Sleep modovi značajno smanjuju potrošnju između aktivnih perioda.',['../F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-Automatski-pokazivac-skretanja-bicikla/Lab_2_Hamin/readme.md#autotoc_md30',1,'']]],
-  ['moguće_20nadogradnje_3a_4',['🔧 Moguće nadogradnje:',['../F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-Automatski-pokazivac-skretanja-bicikla/Lab2_Mlinaric/readme.md#autotoc_md16',1,'']]]
+  ['updatebatterybargraph_0',['updateBatteryBarGraph',['../sketch_8cpp.html#a644f8ec2f3c1a46215eeeeecb4af9ef9',1,'sketch.cpp']]],
+  ['upute_20za_20doprinos_20projektu_1',['Upute za doprinos projektu',['../md__f_1_2_desktop_2_i_t_2_diplomski_22_8_01semestar_2_razvoj_01ugradbenih_01sustava_2_r_u_s-_aut737dda752f6aa80aed6c939400b121f1.html',1,'']]]
 ];

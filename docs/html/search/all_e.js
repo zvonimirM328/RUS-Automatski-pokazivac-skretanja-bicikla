@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['led_20diode_0',['📌 Treptanje LED diode',['../F:/Desktop/IT/Diplomski/2. semestar/Razvoj ugradbenih sustava/RUS-Automatski-pokazivac-skretanja-bicikla/Lab_2_Hamin/readme.md#autotoc_md25',1,'']]]
+  ['tehnologije_0',['Tehnologije',['../index.html#autotoc_md16',1,'']]],
+  ['temperrorduration_1',['tempErrorDuration',['../sketch_8cpp.html#a23edcdbedf11bbdad95b04fb99844a13',1,'sketch.cpp']]],
+  ['tima_2',['Članovi tima',['../index.html#autotoc_md20',1,'']]]
 ];

@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['temperrorduration_0',['tempErrorDuration',['../sketch_8cpp.html#a23edcdbedf11bbdad95b04fb99844a13',1,'sketch.cpp']]]
+  ['očekivanja_0',['Naša očekivanja',['../md__f_1_2_desktop_2_i_t_2_diplomski_22_8_01semestar_2_razvoj_01ugradbenih_01sustava_2_r_u_s-_aut4653004c97e8aa4b530a7f296ee6ffe1.html#autotoc_md2',1,'']]],
+  ['obećanje_1',['Naše obećanje',['../md__f_1_2_desktop_2_i_t_2_diplomski_22_8_01semestar_2_razvoj_01ugradbenih_01sustava_2_r_u_s-_aut4653004c97e8aa4b530a7f296ee6ffe1.html#autotoc_md1',1,'']]],
+  ['odgovornost_2',['Naša odgovornost',['../md__f_1_2_desktop_2_i_t_2_diplomski_22_8_01semestar_2_razvoj_01ugradbenih_01sustava_2_r_u_s-_aut4653004c97e8aa4b530a7f296ee6ffe1.html#autotoc_md3',1,'']]],
+  ['opis_20projekta_3',['Opis projekta',['../index.html#autotoc_md12',1,'']]],
+  ['opseg_4',['Opseg',['../md__f_1_2_desktop_2_i_t_2_diplomski_22_8_01semestar_2_razvoj_01ugradbenih_01sustava_2_r_u_s-_aut4653004c97e8aa4b530a7f296ee6ffe1.html#autotoc_md4',1,'']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Automatski pokazivac skretanja bicikla: RUS-Automatski-pokazivac-skretanja-bicikla</title>
+<title>Automatski pokazivac skretanja bicikla: Automatski pokazivač skretanja bicikla 🚲</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,14 +102,98 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">RUS-Automatski-pokazivac-skretanja-bicikla </div></div>
+  <div class="headertitle"><div class="title">Automatski pokazivač skretanja bicikla 🚲 </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__f_1_2_desktop_2_i_t_2_diplomski_22_8_01semestar_2_razvoj_01ugradbenih_01sustava_2_r_u_s-_automatski-pokazivac-skretanja-bicikla_2_r_e_a_d_m_e"></a></p>
-<p><a href="https://wokwi.com/projects/429320227133652993">🔗 Poveznica za projekt</a></p>
-<p><img src="projekt.png" alt="Arduino Setup" class="inline"/></p>
-<p><a href="https://wokwi.com/projects/429320227133652993">finale</a></p>
-<p>DIJAGRAMI STANJA I SVIJESTI!!!!!!!!!!!! </p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Opis projekta</h1>
+<p>Ovaj projekt je rezultat timskog rada u sklopu projektnog zadatka kolegija <b>Razvoj ugradbenih sustava</b> na <b>Tehničkom veleučilištu u Zagrebu</b>.</p>
+<p>Cilj projekta je razvoj automatskog pokazivača smjera skretanja za bicikle, s naglaskom na povećanje sigurnosti biciklista u prometu. Sustav automatski prepoznaje smjer skretanja i kočenje koristeći podatke o akceleraciji bicikla, bez potrebe za ručnim signaliziranjem od strane biciklista.</p>
+<p>Motivacija za razvoj ovog sustava je smanjivanje rizika od prometnih nezgoda, povećanje vidljivosti biciklista i demonstracija primjene senzora i mikrokontrolera u pametnim prometnim rješenjima.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md14"></a>
+Funkcijski zahtjevi</h1>
+<ul>
+<li>Automatska detekcija skretanja ulijevo/udesno pomoću akceleracije po X-osi.</li>
+<li>Automatska signalizacija kočenja putem detekcije akceleracije po Z-osi.</li>
+<li>Vizualna signalizacija putem žutih LED dioda (lijevo/desno) i LED bar grafikona (stanje baterije).</li>
+<li>Zvučna signalizacija (buzzer) pri ručnom gašenju sustava.</li>
+<li>Sleep mode za uštedu energije u slučaju neaktivnosti.</li>
+<li>Ručno resetiranje sustava putem gumba u slučaju greške ili ekstremne temperature.</li>
+<li>Indikacija greške ili ekstremnih uvjeta putem crvene LED diode.</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md16"></a>
+Tehnologije</h1>
+<ul>
+<li><b>Arduino Uno</b> (mikrokontroler)</li>
+<li><b>MPU6050</b> (akcelerometar i žiroskop)</li>
+<li><b>LED diode</b> (žute, crvena, zelena, plava)</li>
+<li><b>LED bar grafikon</b></li>
+<li><b>Buzzer</b></li>
+<li><b>Push gumb</b></li>
+<li><b>Potenciometar</b> (za simulaciju napona u Wokwi simulatoru)</li>
+<li><b>Wokwi simulator</b> (okruženje za razvoj i testiranje)</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md18"></a>
+Instalacija</h1>
+<p>Projekt se trenutno razvija i testira unutar <b>Wokwi simulacijskog okruženja</b>.</p>
+<p>Za pokretanje projekta potrebno je:</p>
+<ol type="1">
+<li>Otvoriti <a href="https://wokwi.com/">Wokwi</a>.</li>
+<li>Učitati projektni kod i shemu povezivanja.</li>
+<li>Pokrenuti simulaciju.</li>
+</ol>
+<hr  />
+<h1><a class="anchor" id="autotoc_md20"></a>
+Članovi tima</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Ime i prezime   </th><th class="markdownTableHeadNone">GitHub profil   </th><th class="markdownTableHeadNone">Doprinos projektu    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Dan Hamin   </td><td class="markdownTableBodyNone"><a href="https://github.com/Dan-Hamin">link na GitHub</a>   </td><td class="markdownTableBodyNone">Razvoj koda, integracija senzora, dokumentacija    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Zvonimir Mlinarić   </td><td class="markdownTableBodyNone"><a href="https://github.com/zvonimirM328">link na GitHub</a>   </td><td class="markdownTableBodyNone">Razvoj koda, integracija senzora, dokumentacija   </td></tr>
+</table>
+<hr  />
+<h1><a class="anchor" id="autotoc_md22"></a>
+Kontribucije</h1>
+<p>Za pravila doprinosa projektu, pogledajte dokument <b>CONTRIBUTING.md</b>.</p>
+<ul>
+<li>Jasna podjela zadataka među članovima.</li>
+<li>Dogovorena komunikacija putem dostupnih kanala.</li>
+<li>Rješavanje sporova u skladu s unaprijed definiranim pravilima i kodeksom ponašanja.</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md24"></a>
+📝 Kodeks ponašanja</h1>
+<p>Projekt slijedi načela <b>Contributor Covenant</b> i <b>etike IEEE-a</b>, uključujući:</p>
+<ul>
+<li>Profesionalno i odgovorno ponašanje.</li>
+<li>Poštivanje svih članova zajednice.</li>
+<li>Transparentno donošenje odluka.</li>
+<li>Nulta tolerancija na neprihvatljivo ponašanje.</li>
+</ul>
+<p>Više informacija možete pronaći u dokumentu <b>CODE_OF_CONDUCT.md</b>.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md26"></a>
+📝 Licenca</h1>
+<p>Ovaj repozitorij je licenciran pod uvjetima <b>Creative Commons CC BY-NC-SA 4.0</b>.</p>
+<ul>
+<li><b>Dijeljenje</b> uz navođenje izvora.</li>
+<li><b>Ne-komercijalna</b> upotreba.</li>
+<li><b>Dijeljenje pod istim uvjetima</b>.</li>
+</ul>
+<p>Više informacija o licenci dostupno je <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">ovdje</a>.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md28"></a>
+Napomena</h1>
+<ul>
+<li>Svi korišteni paketi, slike, modeli i animacije imaju svoje vlastite licence.</li>
+<li>Dodatni sadržaji mogu biti licencirani pod <b>CC0-1.0</b> (javna domena). </li>
+</ul>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

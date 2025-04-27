@@ -1,13 +1,113 @@
-\chapter{RUS-\/\+Automatski-\/pokazivac-\/skretanja-\/bicikla}
-\hypertarget{index}{}\label{index}\index{RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla@{RUS-\/Automatski-\/pokazivac-\/skretanja-\/bicikla}}
+\chapter{Automatski pokazivač skretanja bicikla 🚲}
+\hypertarget{index}{}\label{index}\index{Automatski pokazivač skretanja bicikla 🚲@{Automatski pokazivač skretanja bicikla 🚲}}
 \label{index_md__f_1_2_desktop_2_i_t_2_diplomski_22_8_01semestar_2_razvoj_01ugradbenih_01sustava_2_r_u_s-_automatski-pokazivac-skretanja-bicikla_2_r_e_a_d_m_e}%
 \Hypertarget{index_md__f_1_2_desktop_2_i_t_2_diplomski_22_8_01semestar_2_razvoj_01ugradbenih_01sustava_2_r_u_s-_automatski-pokazivac-skretanja-bicikla_2_r_e_a_d_m_e}%
+\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{Opis projekta}{Opis projekta}}\label{index_autotoc_md12}
+Ovaj projekt je rezultat timskog rada u sklopu projektnog zadatka kolegija {\bfseries{Razvoj ugradbenih sustava}} na {\bfseries{Tehničkom veleučilištu u Zagrebu}}.
+
+Cilj projekta je razvoj automatskog pokazivača smjera skretanja za bicikle, s naglaskom na povećanje sigurnosti biciklista u prometu. Sustav automatski prepoznaje smjer skretanja i kočenje koristeći podatke o akceleraciji bicikla, bez potrebe za ručnim signaliziranjem od strane biciklista.
+
+Motivacija za razvoj ovog sustava je smanjivanje rizika od prometnih nezgoda, povećanje vidljivosti biciklista i demonstracija primjene senzora i mikrokontrolera u pametnim prometnim rješenjima.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md14}{}\doxysection{\texorpdfstring{Funkcijski zahtjevi}{Funkcijski zahtjevi}}\label{index_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Automatska detekcija skretanja ulijevo/udesno pomoću akceleracije po X-\/osi.
+\item Automatska signalizacija kočenja putem detekcije akceleracije po Z-\/osi.
+\item Vizualna signalizacija putem žutih LED dioda (lijevo/desno) i LED bar grafikona (stanje baterije).
+\item Zvučna signalizacija (buzzer) pri ručnom gašenju sustava.
+\item Sleep mode za uštedu energije u slučaju neaktivnosti.
+\item Ručno resetiranje sustava putem gumba u slučaju greške ili ekstremne temperature.
+\item Indikacija greške ili ekstremnih uvjeta putem crvene LED diode.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md16}{}\doxysection{\texorpdfstring{Tehnologije}{Tehnologije}}\label{index_autotoc_md16}
+
+\begin{DoxyItemize}
+\item {\bfseries{Arduino Uno}} (mikrokontroler)
+\item {\bfseries{MPU6050}} (akcelerometar i žiroskop)
+\item {\bfseries{LED diode}} (žute, crvena, zelena, plava)
+\item {\bfseries{LED bar grafikon}}
+\item {\bfseries{Buzzer}}
+\item {\bfseries{Push gumb}}
+\item {\bfseries{Potenciometar}} (za simulaciju napona u Wokwi simulatoru)
+\item {\bfseries{Wokwi simulator}} (okruženje za razvoj i testiranje)
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md18}{}\doxysection{\texorpdfstring{Instalacija}{Instalacija}}\label{index_autotoc_md18}
+Projekt se trenutno razvija i testira unutar {\bfseries{Wokwi simulacijskog okruženja}}.
+
+Za pokretanje projekta potrebno je\+:
 
 
-\href{https://wokwi.com/projects/429320227133652993}{\texttt{ 🔗 Poveznica za projekt}}
+\begin{DoxyEnumerate}
+\item Otvoriti \href{https://wokwi.com/}{\texttt{ Wokwi}}.
+\item Učitati projektni kod i shemu povezivanja.
+\item Pokrenuti simulaciju.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md20}{}\doxysection{\texorpdfstring{Članovi tima}{Članovi tima}}\label{index_autotoc_md20}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Ime i prezime   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Git\+Hub profil   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Doprinos projektu    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Ime i prezime   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Git\+Hub profil   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Doprinos projektu    }\\\cline{1-3}
+\endhead
+Dan Hamin   &\href{https://github.com/Dan-Hamin}{\texttt{ link na Git\+Hub}}   &Razvoj koda, integracija senzora, dokumentacija    \\\cline{1-3}
+Zvonimir Mlinarić   &\href{https://github.com/zvonimirM328}{\texttt{ link na Git\+Hub}}   &Razvoj koda, integracija senzora, dokumentacija   \\\cline{1-3}
+\end{longtabu}
 
 
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md22}{}\doxysection{\texorpdfstring{Kontribucije}{Kontribucije}}\label{index_autotoc_md22}
+Za pravila doprinosa projektu, pogledajte dokument {\bfseries{CONTRIBUTING.\+md}}.
 
-\href{https://wokwi.com/projects/429320227133652993}{\texttt{ finale}}
 
-DIJAGRAMI STANJA I SVIJESTI!!!!!!!!!!!! 
+\begin{DoxyItemize}
+\item Jasna podjela zadataka među članovima.
+\item Dogovorena komunikacija putem dostupnih kanala.
+\item Rješavanje sporova u skladu s unaprijed definiranim pravilima i kodeksom ponašanja.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md24}{}\doxysection{\texorpdfstring{📝 Kodeks ponašanja}{📝 Kodeks ponašanja}}\label{index_autotoc_md24}
+Projekt slijedi načela {\bfseries{Contributor Covenant}} i {\bfseries{etike IEEE-\/a}}, uključujući\+:
+
+
+\begin{DoxyItemize}
+\item Profesionalno i odgovorno ponašanje.
+\item Poštivanje svih članova zajednice.
+\item Transparentno donošenje odluka.
+\item Nulta tolerancija na neprihvatljivo ponašanje.
+\end{DoxyItemize}
+
+Više informacija možete pronaći u dokumentu {\bfseries{CODE\+\_\+\+OF\+\_\+\+CONDUCT.\+md}}.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md26}{}\doxysection{\texorpdfstring{📝 Licenca}{📝 Licenca}}\label{index_autotoc_md26}
+Ovaj repozitorij je licenciran pod uvjetima {\bfseries{Creative Commons CC BY-\/\+NC-\/\+SA 4.\+0}}.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Dijeljenje}} uz navođenje izvora.
+\item {\bfseries{Ne-\/komercijalna}} upotreba.
+\item {\bfseries{Dijeljenje pod istim uvjetima}}.
+\end{DoxyItemize}
+
+Više informacija o licenci dostupno je \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{\texttt{ ovdje}}.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md28}{}\doxysection{\texorpdfstring{Napomena}{Napomena}}\label{index_autotoc_md28}
+
+\begin{DoxyItemize}
+\item Svi korišteni paketi, slike, modeli i animacije imaju svoje vlastite licence.
+\item Dodatni sadržaji mogu biti licencirani pod {\bfseries{CC0-\/1.\+0}} (javna domena). 
+\end{DoxyItemize}
