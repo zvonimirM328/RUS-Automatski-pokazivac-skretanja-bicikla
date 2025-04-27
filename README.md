@@ -51,10 +51,9 @@ Za pokretanje projekta potrebno je:
 
 | Ime i prezime | GitHub profil | Doprinos projektu |
 |---------------|---------------|--------------------|
-| [Dan Hamin] | [link na GitHub] | Razvoj koda, integracija senzora, dokumentacija |
-| [Zvonimir Mlinarić] | [link na GitHub] | Razvoj koda, integracija senzora, dokumentacija |
+| Dan Hamin | [link na GitHub](https://github.com/Dan-Hamin) | Razvoj koda, integracija senzora, dokumentacija |
+| Zvonimir Mlinarić | [link na GitHub](https://github.com/zvonimirM328) | Razvoj koda, integracija senzora, dokumentacija |
 
-*(Po potrebi dodati ostale članove.)*
 
 ---
 
