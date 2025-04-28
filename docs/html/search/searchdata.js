@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "abcdefiklnoprstuzč📝🚲",
+  0: "abcdefiklnopstuzč📝🚲",
   1: "s",
   2: "cefilpsu",
   3: "ablpt",
-  4: "abdkprsuz🚲"
+  4: "abdkpsuz🚲"
 };
 
 var indexSectionNames =
