@@ -4,6 +4,8 @@
 
 [🔗 Poveznica za projekt](https://wokwi.com/projects/429320227133652993)
 
+<img width="397" alt="projekt (1)" src="https://github.com/user-attachments/assets/d4bba62e-3406-47eb-b2a5-c9772f009560" />
+
 ## Opis projekta
 
 Ovaj projekt je rezultat timskog rada u sklopu projektnog zadatka kolegija **Razvoj ugradbenih sustava** na **Tehničkom veleučilištu u Zagrebu**.
