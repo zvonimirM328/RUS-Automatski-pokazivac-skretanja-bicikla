@@ -1,7 +1,6 @@
 # Automatski pokazivač skretanja bicikla 🚲
 
-[![Documentation](https://img.shields.io/badge/docs-Doxygen-blue)](https://zvonimirM328.github.io/RUS-Automatski-pokazivac-skretanja-bicikla/html/index.html)
-https://zvonimirm328.github.io/RUS-Automatski-pokazivac-skretanja-bicikla/html
+[![Documentation](https://img.shields.io/badge/docs-Doxygen-blue)](https://zvonimirM328.github.io/RUS-Automatski-pokazivac-skretanja-bicikla/html)
 
 ## Opis projekta
 
