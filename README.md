@@ -1,5 +1,7 @@
 # Automatski pokazivač skretanja bicikla 🚲
 
+[![Documentation](https://img.shields.io/badge/docs-Doxygen-blue)](https://zvonimirM328.github.io/RUS-Automatski-pokazivac-skretanja-bicikla/)
+
 ## Opis projekta
 
 Ovaj projekt je rezultat timskog rada u sklopu projektnog zadatka kolegija **Razvoj ugradbenih sustava** na **Tehničkom veleučilištu u Zagrebu**.
