@@ -187,8 +187,6 @@
  
  void loop() {
    // Main operational logic
-   // Same loop code as you provided...
-   // (for brevity, I won't paste it all again unless you want me to)
  }
  
  void calibrateMPU() {
