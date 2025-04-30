@@ -18,13 +18,13 @@ Motivacija za razvoj ovog sustava je smanjivanje rizika od prometnih nezgoda, po
 
 ## Funkcijski zahtjevi
 
-- Automatska detekcija skretanja ulijevo/udesno pomoću akceleracije po X-osi.
-- Automatska signalizacija kočenja putem detekcije akceleracije po Z-osi.
-- Vizualna signalizacija putem žutih LED dioda (lijevo/desno) i LED bar grafikona (stanje baterije).
-- Zvučna signalizacija (buzzer) pri ručnom gašenju sustava.
-- Sleep mode za uštedu energije u slučaju neaktivnosti.
-- Ručno resetiranje sustava putem gumba u slučaju greške ili ekstremne temperature.
-- Indikacija greške ili ekstremnih uvjeta putem crvene LED diode.
+- Automatska detekcija skretanja ulijevo/udesno pomoću akceleracije po X-osi
+- Automatska signalizacija kočenja putem detekcije akceleracije po Z-osi
+- Vizualna signalizacija putem žutih LED dioda (lijevo/desno) i LED bar grafikona (stanje baterije)
+- Zvučna signalizacija (buzzer) pri ručnom gašenju sustava
+- Sleep mode za uštedu energije u slučaju neaktivnosti
+- Ručno resetiranje sustava putem gumba u slučaju greške ili ekstremne temperature
+- Indikacija greške ili ekstremnih uvjeta putem crvene LED diode
 
 ---
 
@@ -47,9 +47,9 @@ Projekt se trenutno razvija i testira unutar **Wokwi simulacijskog okruženja**.
 
 Za pokretanje projekta potrebno je:
 
-1. Otvoriti [Wokwi](https://wokwi.com/).
-2. Učitati projektni kod i shemu povezivanja.
-3. Pokrenuti simulaciju.
+1. Otvoriti [Wokwi](https://wokwi.com/)
+2. Učitati projektni kod i shemu povezivanja
+3. Pokrenuti simulaciju
 
 ---
 
@@ -67,9 +67,9 @@ Za pokretanje projekta potrebno je:
 
 Za pravila doprinosa projektu, pogledajte dokument **CONTRIBUTING.md**.
 
-- Jasna podjela zadataka među članovima.
-- Dogovorena komunikacija putem dostupnih kanala.
-- Rješavanje sporova u skladu s unaprijed definiranim pravilima i kodeksom ponašanja.
+- Jasna podjela zadataka među članovima
+- Dogovorena komunikacija putem dostupnih kanala
+- Rješavanje sporova u skladu s unaprijed definiranim pravilima i kodeksom ponašanja
 
 ---
 
@@ -77,10 +77,10 @@ Za pravila doprinosa projektu, pogledajte dokument **CONTRIBUTING.md**.
 
 Projekt slijedi načela **Contributor Covenant** i **etike IEEE-a**, uključujući:
 
-- Profesionalno i odgovorno ponašanje.
-- Poštivanje svih članova zajednice.
-- Transparentno donošenje odluka.
-- Nulta tolerancija na neprihvatljivo ponašanje.
+- Profesionalno i odgovorno ponašanje
+- Poštivanje svih članova zajednice
+- Transparentno donošenje odluka
+- Nulta tolerancija na neprihvatljivo ponašanje
 
 Više informacija možete pronaći u dokumentu **CODE_OF_CONDUCT.md**.
 
@@ -90,9 +90,9 @@ Više informacija možete pronaći u dokumentu **CODE_OF_CONDUCT.md**.
 
 Ovaj repozitorij je licenciran pod uvjetima **Creative Commons CC BY-NC-SA 4.0**.
 
-- **Dijeljenje** uz navođenje izvora.
-- **Ne-komercijalna** upotreba.
-- **Dijeljenje pod istim uvjetima**.
+- **Dijeljenje** uz navođenje izvora
+- **Ne-komercijalna** upotreba
+- **Dijeljenje pod istim uvjetima**
 
 Više informacija o licenci dostupno je [ovdje](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
