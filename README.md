@@ -3,7 +3,6 @@
 [![Documentation](https://img.shields.io/badge/docs-Doxygen-blue)](https://zvonimirM328.github.io/RUS-Automatski-pokazivac-skretanja-bicikla/html)
 
 [🔗 Poveznica za projekt](https://wokwi.com/projects/429320227133652993)
-[Wokwi](https://wokwi.com/projects/429320227133652993)
 
 <img width="397" alt="projekt (1)" src="https://github.com/user-attachments/assets/d4bba62e-3406-47eb-b2a5-c9772f009560" />
 
